@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ohmyfood - La palette du goût</title>
+    <meta charset="UTF-8">
+    <meta name= "viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name= "author" content="Stéphane CAU">
+    <meta name= "description" content="Grâce à OhMyFood, réservez le menu qui vous convient dans ce restaurant d'exception : La palette du goût, 
+    sélectionnés par nos soins !!!">
+    <!--<link rel="stylesheet" href="css/normalize.css">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--<link rel="stylesheet" href="css/style.css">-->
+</head>
+<body>
+    <div  id="bloc_page"> <!-- div for the page size max 1920px -->
+        <!-- Creation of the header with logo and nav menu -->
+        <header class="header">
+            <img src="images/ohmyfood.png" alt="Logo de ohmyfood" class="header-logo" /> <!-- Logo -->
+            <nav class="header-nav"> <!-- Navigation menu -->
+                <a href="index.html">
+                    <i class="fas fa-arrow-left nav-icon"></i>
+                    <span class="nav-texte">Accueil</span>
+                </a>
+            </nav>
+        </header>
+
+        <!-- Creation of the 'Menu' section -->
+        <section class="menu-section">
+            <!-- Menu figure -->
+            <figure class="menu-fig">
+                <!-- image -->
+                <img src="images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Photo La palette du goût" />
+                <!-- legend -->
+                <figcaption class="menu-figcaption">
+                    <!-- Div for menu title -->
+                    <div class="menu-title">
+                        <!-- Title for menu -->
+                        <h1>
+                            La palette du goût
+                        </h1>
+                        <i class="far fa-heart menu-heart"></i>
+                    </div>
+                    <!-- Creation of the 'formulaire' menu -->
+                    <form class="form-menu" method="post" action="nothing">
+                        <!-- Section 1 for Menu - Entrées -->
+                        <section class="menu-section">
+                            <!-- Title for menu -->
+                            <h2>
+                                entrées
+                            </h2>
+                            <fieldset>
+                                <!-- 1st Entrées -->
+                                <div class="plat-prev">
+                                    <label for="entree1">
+                                        <div class="plat-description">
+                                            <h3>
+                                                Fricassée d'escargot
+                                            </h3>
+                                            <p class="plat-complement">Au piment d'Espelette</p>
+                                        </div>
+                                        <p class="plat-prix">25€</p>
+                                        <i class="fas fa-check-circle"></i>
+                                    </label>
+                                    <input type="radio" name="entrees" id="entree1" value="" class="menu-radio" />
+                                </div>
+                                <!-- 2nd Entrées -->
+                                <div class="plat-prev">
+                                    <label for="entree2">
+                                        <div class="plat-description">
+                                            <h3>
+                                                Foie gras de canard mi-cuit
+                                            </h3>
+                                            <p class="plat-complement">Et ses copeaux de truffe noire</p>
+                                        </div>
+                                        <p class="plat-prix">35€</p>
+                                        <i class="fas fa-check-circle"></i>
+                                    </label>
+                                    <input type="radio" name="entrees" id="entree2" value="" class="menu-radio" />
+                                </div>
+                                <!-- 3rd Entrées -->
+                                <div class="plat-prev">
+                                    <label for="entree3">
+                                        <div class="plat-description">
+                                            <h3>
+                                                Oeuf au plat
+                                            </h3>
+                                            <p class="plat-complement">Assaisonné à la truffe sur lit de caviar</p>
+                                        </div>
+                                        <p class="plat-prix">20€</p>
+                                        <i class="fas fa-check-circle"></i>
+                                    </label>
+                                    <input type="radio" name="entrees" id="entree3" value="" class="menu-radio" />
+                                </div>
+                            </fieldset>
+                        </section>
+
+                        <!-- Section 2 for Menu - Plats -->
+                        <section class="menu-section">
+                            <!-- Title for menu -->
+                            <h2>
+                                plats
+                            </h2>
+                            <fieldset>
+                                <!-- 1st Plats -->
+                                <div class="plat-prev">
+                                    <label for="plat1">
+                                        <div class="plat-description">
+                                            <h3>
+                                                Filet de boeuf aux herbes
+                                            </h3>
+                                            <p class="plat-complement">Accompagné de sa ribambelle de légumes</p>
+                                        </div>
+                                        <p class="plat-prix">40€</p>
+                                        <i class="fas fa-check-circle"></i>
+                                    </label>
+                                    <input type="radio" name="plats" id="plat1" value="" class="menu-radio" />
+                                </div>
+                                <!-- 2nd Plats -->
+                                <div class="plat-prev">
+                                    <label for="plat2">
+                                        <div class="plat-description">
+                                            <h3>
+                                                Parmentier de queue de boeuf
+                                            </h3>
+                                            <p class="plat-complement">À la truffe noire sur sa purée de panais</p>
+                                        </div>
+                                        <p class="plat-prix">35€</p>
+                                        <i class="fas fa-check-circle"></i>
+                                    </label>
+                                    <input type="radio" name="plats" id="plat2" value="" class="menu-radio" />
+                                </div>
+                                <!-- 3rd Plats -->
+                                <div class="plat-prev">
+                                    <label for="plat3">
+                                        <div class="plat-description">
+                                            <h3>
+                                                Filet de turbot
+                                            </h3>
+                                            <p class="plat-complement">Aux agrumes</p>
+                                        </div>
+                                        <p class="plat-prix">44€</p>
+                                        <i class="fas fa-check-circle"></i>
+                                    </label>
+                                    <input type="radio" name="plats" id="plat3" value="" class="menu-radio" />
+                                </div>
+                            </fieldset>
+                        </section>
+
+                        <!-- Section 3 for Menu - Désserts -->
+                        <section class="menu-section">
+                            <!-- Title for menu -->
+                            <h2>
+                                désserts
+                            </h2>
+                            <fieldset>
+                                <!-- 1st Déssert -->
+                                <div class="plat-prev">
+                                    <label for="dessert1">
+                                        <div class="plat-description">
+                                            <h3>
+                                                Paris-Brest
+                                            </h3>
+                                            <p class="plat-complement">Revisité</p>
+                                        </div>
+                                        <p class="plat-prix">18€</p>
+                                        <i class="fas fa-check-circle"></i>
+                                    </label>
+                                    <input type="radio" name="desserts" id="dessert1" value="" class="menu-radio" />
+                                </div>
+                                <!-- 2nd Désserts -->
+                                <div class="plat-prev">
+                                    <label for="dessert2">
+                                        <div class="plat-description">
+                                            <h3>
+                                                Macaron au chocolat d'exception
+                                            </h3>
+                                            <p class="plat-complement">Et glace à la vanille de Madagascar</p>
+                                        </div>
+                                        <p class="plat-prix">22€</p>
+                                        <i class="fas fa-check-circle"></i>
+                                    </label>
+                                    <input type="radio" name="desserts" id="dessert2" value="" class="menu-radio" />
+                                </div>
+                                <!-- 3rd Désserts -->
+                                <div class="plat-prev">
+                                    <label for="dessert3">
+                                        <div class="plat-description">
+                                            <h3>
+                                                Mousse au chocolat
+                                            </h3>
+                                            <p class="plat-complement">Au piment d'Espelette et à la truffe noire</p>
+                                        </div>
+                                        <p class="plat-prix">23€</p>
+                                        <i class="fas fa-check-circle"></i>
+                                    </label>
+                                    <input type="radio" name="desserts" id="dessert3" value="" class="menu-radio" />
+                                </div>
+                            </fieldset>
+                        </section>
+
+                        <!-- Button for form submitting -->
+                        <input type="submit" value="Commander" name="button" id="button" class="btn-input" />
+                    </form>
+                </figcaption>
+            </figure>
+        </section>
+
+        <!-- Creation of the Footer -->
+        <footer class="footer">
+            <h2>ohmyfood</h2>
+            <ul class="footer-ul">
+                <li><a class="footer-link" href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
+                <li><a class="footer-link" href="#"><i class="fas fa-hands-helping"></i>Devenir partenaire</a></li>
+                <li><a class="footer-link" href="#">Mentions légales</a></li>
+                <li><a class="footer-link" href="mailto: contact@ohmyfood.com?subject=Renseignement(s)&body=Votre message ici">Contact</a></li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>
