@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ohmyfood</title>
+    <meta charset="UTF-8">
+    <meta name= "viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name= "author" content="Stéphane CAU">
+    <meta name= "description" content="Grâce à OhMyFood, réservez le menu qui vous convient dans des restaurants d'exception, 
+    sélectionnés par nos soins dans la ville de votre choix !!!">
+    <!--<link rel="stylesheet" href="css/normalize.css">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--<link rel="stylesheet" href="css/style.css">-->
+</head>
+<body>
+    <div  id="bloc_page"> <!-- div for the page size max 1920px -->
+        <!-- Creation of the header with logo and nav menu -->
+        <header class="header">
+            <img src="images/ohmyfood.png" alt="Logo de ohmyfood" class="header-logo" /> <!-- Logo -->
+            <nav class="header-nav"> <!-- Navigation menu -->
+                <a href="index.html">
+                    <i class="fas fa-arrow-left nav-icon"></i>
+                    <span class="nav-texte">Accueil</span>
+                </a>
+            </nav>
+        </header>
+
+        <!-- Creation of the 'formulaire' section -->
+        <form class="form-city" method="post" action="nothing">
+            <!-- Section for Formulaire description -->
+            <section class="city-section">
+                <div class="city-div">
+                    <label for="ville"><i class="fas fa-map-marker-alt city-icon"></i></label>
+                    <input type="text" name="ville" id="ville" placeholder="Paris, Belleville" class="city-input" />
+                </div>
+                <h1>
+                    Réserver le menu qui vous convient
+                </h1>
+                <p>
+                    Découvrer des restaurants d'exception, sélectionnés par nos soins
+                </p>
+            </section>
+
+            <!-- Button for form submitting -->
+            <input type="submit" value="Explorer nos restaurants" name="button" id="button" class="btn-input" />
+        </form>
+
+        <!-- Creation of the 'Restaurant' section -->
+        <section class="prev-section" id="s_resto">
+            <!-- Hébergement article -->
+            <article class="prev-article">
+                <!-- Title for restaurant -->
+                <h2>
+                    Resturants
+                </h2>
+
+                <!-- Restaurant container -->
+                <div class="prev-container">
+                    <!-- 1st card : La palette du goût -->
+                    <a href="#">
+                        <figure class="prev-fig">
+                            <!-- image -->
+                            <img src="images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Photo La palette du goût" />
+                            <!-- legend -->
+                            <figcaption class="prev-figcaption">
+                                <!-- Div for description -->
+                                <div class="prev-description">
+                                    <!-- title of card -->
+                                    <h3 class="prev-title">
+                                        La palette du goût
+                                    </h3>
+                                    <!-- text of card -->
+                                    <p class="prev-text">
+                                        Ménilmontant 
+                                    </p>
+                                </div>
+                                <!-- Icons -->
+                                <i class="far fa-heart prev-heart"></i>
+                            </figcaption>
+                        </figure>
+                        <p class="prev-new__enable">Nouveau</p>
+                    </a>
+
+                    <!-- 2nd card : La note enchantée -->
+                    <a href="#">
+                        <figure class="prev-fig">
+                            <!-- image -->
+                            <img src="images/stil-u2Lp8tXIcjw-unsplash.jpg" alt="Photo La note enchantée" />
+                            <!-- legend -->
+                            <figcaption class="prev-figcaption">
+                                <!-- Div for description -->
+                                <div class="prev-description">
+                                    <!-- title of card -->
+                                    <h3 class="prev-title">
+                                        La note enchantée
+                                    </h3>
+                                    <!-- text of card -->
+                                    <p class="prev-text">
+                                        Charonne
+                                    </p>
+                                </div>
+                                <!-- Icons -->
+                                <i class="far fa-heart prev-heart"></i>
+                            </figcaption>
+                        </figure>
+                        <p class="prev-new__enable">Nouveau</p>
+                    </a>
+
+                    <!-- 3rd card : À la française -->
+                    <a href="#">
+                        <figure class="prev-fig">
+                            <!-- image -->
+                            <img src="images/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Photo À la française" />
+                            <!-- legend -->
+                            <figcaption class="prev-figcaption">
+                                <!-- Div for description -->
+                                <div class="prev-description">
+                                    <!-- title of card -->
+                                    <h3 class="prev-title">
+                                        À la française
+                                    </h3>
+                                    <!-- text of card -->
+                                    <p class="prev-text">
+                                        Cité Rouge
+                                    </p>
+                                </div>
+                                <!-- Icons -->
+                                <i class="far fa-heart prev-heart"></i>
+                            </figcaption>
+                        </figure>
+                        <p class="prev-new__disable">Nouveau</p>
+                    </a>
+
+                    <!-- 4th card : Le délice des sens -->
+                    <a href="#">
+                        <figure class="prev-fig">
+                            <!-- image -->
+                            <img src="images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Photo Le délice des sens" />
+                            <!-- legend -->
+                            <figcaption class="prev-figcaption">
+                                <!-- Div for description -->
+                                <div class="prev-description">
+                                    <!-- title of card -->
+                                    <h3 class="prev-title">
+                                        Le délice des sens
+                                    </h3>
+                                    <!-- text of card -->
+                                    <p class="prev-text">
+                                        Folie-Méricourt
+                                    </p>
+                                </div>
+                                <!-- Icons -->
+                                <i class="far fa-heart prev-heart"></i>
+                            </figcaption>
+                        </figure>
+                        <p class="prev-new__disable">Nouveau</p>
+                    </a>
+                </div>
+            </article>
+
+            <!-- aside -->
+            <aside class="resto-aside">
+                <!-- aside title -->
+                <h2>
+                    Fonctionnement
+                </h2>
+                <!-- list -->
+                <ul>
+                    <li><span class="list-number">1</span><i class="fas fa-mobile-alt"></i><span>Choisissez un restaurant</span></li>
+                    <li><span class="list-number">2</span><i class="fas fa-list"></i><span>Composez votre menu</span></li>
+                    <li><span class="list-number">3</span><i class="fas fa-store"></i><span>Dégustez au restaurant</span></li>
+                </ul>
+            </aside>
+        </section>
+
+        <!-- Creation of the Footer -->
+        <footer class="footer">
+            <h2>ohmyfood</h2>
+            <ul class="footer-ul">
+                <li><a class="footer-link" href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
+                <li><a class="footer-link" href="#"><i class="fas fa-hands-helping"></i>Devenir partenaire</a></li>
+                <li><a class="footer-link" href="#">Mentions légales</a></li>
+                <li><a class="footer-link" href="mailto: contact@ohmyfood.com?subject=Renseignement(s)&body=Votre message ici">Contact</a></li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>
