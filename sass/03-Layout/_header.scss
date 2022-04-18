@@ -1,0 +1,29 @@
+.header > img{
+    display: block; /* Convertion img in block in order to center itself */
+    margin: $header-margin auto; /* center img with margin auto for left and right and 23px for top and bottom */
+    height: $img-header-size; /* Difine height size to get good img size */
+}
+
+.nav{
+    position: absolute; /* nav positionning over logo in header */
+    top: $header-margin; /* use of $header-margin variable for positionning nav */
+    left: $header-margin; /* use of $header-margin variable for positionning nav */
+    &--disable{
+        display: none; /* nav not displayed in 'accueil' page */
+    }
+    &--enable{
+        display: block; /* nav displayed in pages except 'accueil' page */
+    }
+}
+
+.nav-link{
+    text-decoration: none; /* No link default style */
+    color: #000;
+    display: flex; /* Display with flexbox in order to align icon and texte */
+    &__icon{
+        @include nav-link-mixin(icon)
+    }
+    &__texte{
+        @include nav-link-mixin(texte)
+    }
+}

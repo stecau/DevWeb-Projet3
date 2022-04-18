@@ -1,3 +1,82 @@
+/* ========================================================================== */
+/* ===                              Variables                             === */
+/* ========================================================================== */
+/* Color variables */
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
+
+/* Size and border definition */
+$img-header-size: 29px;
+$header-margin: 23px;
+$icon-nav-size: 18px;
+
+/* Display variables */
+$icon-nav-display: block;
+$text-nav-display: none;
+$type-nav-display: (
+    icon: $icon-nav-display,
+    texte: $text-nav-display
+);
+
+/* Breakpoints variables */
+$breakpoints: (
+    mobile: 769px,
+    desktop: 1025px,
+    max-width: 1920px
+);
+
+/* ========================================================================== */
+/* ===                              Functions                             === */
+/* ========================================================================== */
+
+/* Function in order to get breaking point in founction of the type of data */
+@function brkpt($type){
+    @if ($type == icon){
+        @return map-get($breakpoints, desktop);
+    }@else{ /* Texte */
+        @return map-get($breakpoints, mobile);
+    }
+}
+
+/* Function in order to get the display style in founction of the type of data and the screen width */
+@function nav-display-type($type, $width){
+    @if ( ( ( $width >= brkpt($type) ) and ( $type == texte ) ) or 
+    ( ( $width < brkpt($type) ) and ( $type == icon ) ) ){
+        @return block;
+    }@else{
+        @return none;
+    }
+}
+
+/* ========================================================================== */
+/* ===                               Mixins                               === */
+/* ========================================================================== */
+/* Mixins for media queries */
+@mixin mobile-except($type){
+    @if ($type == texte){
+        @media screen and (min-width: brkpt($type)){
+            @content;
+        }
+    }
+    @if ($type == icon){
+        @media screen and (min-width: brkpt($type)){
+            @content;
+        }
+    }
+}
+
+/* Mixins for link in the nav CSS style */
+@mixin nav-link-mixin($type){
+    font-size: $icon-nav-size;
+    margin-top: ($img-header-size - $icon-nav-size) / 2 ;
+    @if ($type == icon){
+        margin-right: ($img-header-size - $icon-nav-size) / 2 ;
+    }
+    &--display{
+        display: map-get($type-nav-display, $type);
+        @include mobile-except($type){
+            display: nav-display-type($type, brkpt($type));
+        }
+    }
+}

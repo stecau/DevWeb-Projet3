@@ -2,9 +2,11 @@
 @import "./01-base/base";
 
 /* Utils declaration for css (variables, functions, mixins, %placeholders for extensions */
-@import "./02-Utils/_variables";
+@import "./02-Utils/variables";
 
 /* Layouts for css blocks BEM (header, footer, form,...) */
+@import "./03-Layout/bloc-page";
+@import "./03-Layout/header";
 
 /* Components for css INDEPENDANT blocks BEM (button,...) */
 

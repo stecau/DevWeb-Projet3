@@ -27,6 +27,25 @@ h1 {
   /* Roboto font police used for title h1 in 'accueil' page */
 }
 
+/* Utils declaration for css (variables, functions, mixins, %placeholders for extensions */
+/* ========================================================================== */
+/* ===                              Variables                             === */
+/* ========================================================================== */
+/* Color variables */
+/* Size and border definition */
+/* Display variables */
+/* Breakpoints variables */
+/* ========================================================================== */
+/* ===                              Functions                             === */
+/* ========================================================================== */
+/* Function in order to get breaking point in founction of the type of data */
+/* Function in order to get the display style in founction of the type of data and the screen width */
+/* ========================================================================== */
+/* ===                               Mixins                               === */
+/* ========================================================================== */
+/* Mixins for media queries */
+/* Mixins for link in the nav CSS style */
+/* Layouts for css blocks BEM (header, footer, form,...) */
 /* ========================================================================== */
 /* Definition of the bloc_page style */
 /* Computer screen ; standard style and others with 'viewport' param in html */
@@ -35,8 +54,75 @@ h1 {
   /* Define max width equal to 1920px */
 }
 
-/* Utils declaration for css (variables, functions, mixins, %placeholders for extensions */
-/* Layouts for css blocks BEM (header, footer, form,...) */
+.header > img {
+  display: block;
+  /* Convertion img in block in order to center itself */
+  margin: 23px auto;
+  /* center img with margin auto for left and right and 23px for top and bottom */
+  height: 29px;
+  /* Difine height size to get good img size */
+}
+
+.nav {
+  position: absolute;
+  /* nav positionning over logo in header */
+  top: 23px;
+  /* use of $header-margin variable for positionning nav */
+  left: 23px;
+  /* use of $header-margin variable for positionning nav */
+}
+
+.nav--disable {
+  display: none;
+  /* nav not displayed in 'accueil' page */
+}
+
+.nav--enable {
+  display: block;
+  /* nav displayed in pages except 'accueil' page */
+}
+
+.nav-link {
+  text-decoration: none;
+  /* No link default style */
+  color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* Display with flexbox in order to align icon and texte */
+}
+
+.nav-link__icon {
+  font-size: 18px;
+  margin-top: 5.5px;
+  margin-right: 5.5px;
+}
+
+.nav-link__icon--display {
+  display: block;
+}
+
+@media screen and (min-width: 1025px) {
+  .nav-link__icon--display {
+    display: none;
+  }
+}
+
+.nav-link__texte {
+  font-size: 18px;
+  margin-top: 5.5px;
+}
+
+.nav-link__texte--display {
+  display: none;
+}
+
+@media screen and (min-width: 769px) {
+  .nav-link__texte--display {
+    display: block;
+  }
+}
+
 /* Components for css INDEPENDANT blocks BEM (button,...) */
 /* Pages for css specific blocks code in several pages (specific rules in a page) */
 /* 'Accueil' page css generation */
