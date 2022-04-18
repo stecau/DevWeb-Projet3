@@ -1,0 +1,26 @@
+/* ========================================================================== */
+/* Déclaration initiale for BOX-SIZING */
+* {
+    box-sizing: content-box; /* box-sizing est appliqué à tous les éléments */
+}
+
+/* ========================================================================== */
+/* Definition of the Google font polices */
+    /* For normal text */
+body{
+    font-family: "Roboto", Verdana, sans-serif; /* Roboto font police used for text */
+}
+    /* For titles H1 */
+h1{
+    font-family: "Shrikhand", Verdana, sans-serif; /* Shrikhand font police used for title h1 except 'accueil' page */
+}
+[data-name]{
+    font-family: "Roboto", Verdana, sans-serif; /* Roboto font police used for title h1 in 'accueil' page */
+}
+
+/* ========================================================================== */
+/* Definition of the bloc_page style */
+/* Computer screen ; standard style and others with 'viewport' param in html */
+#bloc_page{
+    max-width: 1920px; /* Define max width equal to 1920px */
+}

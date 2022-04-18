@@ -1,0 +1,20 @@
+/* Base for '1st field' for css (police, norms : box-sizing,...) */
+@import "./01-base/base";
+
+/* Utils declaration for css (variables, functions, mixins, %placeholders for extensions */
+@import "./02-Utils/_variables";
+
+/* Layouts for css blocks BEM (header, footer, form,...) */
+
+/* Components for css INDEPENDANT blocks BEM (button,...) */
+
+/* Pages for css specific blocks code in several pages (specific rules in a page) */
+    /* 'Accueil' page css generation */
+@import "./05-Pages/accueil";
+
+    /* 'Menu' pages css generation */
+@import "./05-Pages/menu";
+
+/* Themes for specific css themes (Noel, promo,...) */
+
+/* Vendors for external style like bootstrap or JQuery */

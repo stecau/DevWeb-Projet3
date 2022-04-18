@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/* Base for '1st field' for css (police, norms : box-sizing,...) */
+/* ========================================================================== */
+/* Déclaration initiale for BOX-SIZING */
+* {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  /* box-sizing est appliqué à tous les éléments */
+}
+
+/* ========================================================================== */
+/* Definition of the Google font polices */
+/* For normal text */
+body {
+  font-family: "Roboto", Verdana, sans-serif;
+  /* Roboto font police used for text */
+}
+
+/* For titles H1 */
+h1 {
+  font-family: "Shrikhand", Verdana, sans-serif;
+  /* Shrikhand font police used for title h1 except 'accueil' page */
+}
+
+[data-name] {
+  font-family: "Roboto", Verdana, sans-serif;
+  /* Roboto font police used for title h1 in 'accueil' page */
+}
+
+/* ========================================================================== */
+/* Definition of the bloc_page style */
+/* Computer screen ; standard style and others with 'viewport' param in html */
+#bloc_page {
+  max-width: 1920px;
+  /* Define max width equal to 1920px */
+}
+
+/* Utils declaration for css (variables, functions, mixins, %placeholders for extensions */
+/* Layouts for css blocks BEM (header, footer, form,...) */
+/* Components for css INDEPENDANT blocks BEM (button,...) */
+/* Pages for css specific blocks code in several pages (specific rules in a page) */
+/* 'Accueil' page css generation */
+/* 'Menu' pages css generation */
+/* Themes for specific css themes (Noel, promo,...) */
+/* Vendors for external style like bootstrap or JQuery */
+/*# sourceMappingURL=style.css.map */
