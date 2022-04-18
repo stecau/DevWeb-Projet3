@@ -5,7 +5,11 @@
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
+$color-city-div: #EAEAEA;
+$color-form: #F6F6F6;
+$color-shadow: #CECECE;
 $color-footer: #353535;
+$color-texte-primary: #000;
 $color-texte-secondary: #fff;
 
 
@@ -102,4 +106,12 @@ $footer-responsive: (
             display: nav-display-type($type, brkpt($type));
         }
     }
+}
+
+/* Mixin for Flex display */
+@mixin flex-display($direction: row, $main-dir: center, $secondary-dir: center){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $main-dir;
+    align-content: $secondary-dir;
 }

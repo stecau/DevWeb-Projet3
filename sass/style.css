@@ -48,6 +48,7 @@ h1, .footer > h2 {
 /* For Header */
 /* For Footer */
 /* Mixins for link in the nav CSS style */
+/* Mixin for Flex display */
 /* Layouts for css blocks BEM (header, footer, form,...) */
 /* ========================================================================== */
 /* Definition of the bloc_page style */
@@ -126,6 +127,78 @@ h1, .footer > h2 {
   }
 }
 
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background-color: #F6F6F6;
+}
+
+.form__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form__label > i {
+  padding: 0 23px;
+}
+
+.form__input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  /* suppress default behaviour */
+  outline: none;
+  /* no border when focus */
+  border: 0;
+  background-color: #EAEAEA;
+}
+
+.form__input::-webkit-input-placeholder {
+  color: #000;
+}
+
+.form__input:-ms-input-placeholder {
+  color: #000;
+}
+
+.form__input::-ms-input-placeholder {
+  color: #000;
+}
+
+.form__input::placeholder {
+  color: #000;
+}
+
+.form__button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  color: #fff;
+  background: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  padding: 15px 20px;
+  margin: 0 auto 60px auto;
+  border-radius: 30px;
+}
+
 .footer {
   background-color: #353535;
   color: #fff;
@@ -180,6 +253,52 @@ h1, .footer > h2 {
 /* Components for css INDEPENDANT blocks BEM (button,...) */
 /* Pages for css specific blocks code in several pages (specific rules in a page) */
 /* 'Accueil' page css generation */
+.city-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.city-section > h1 {
+  margin: 0;
+  padding: 40px 60px 0px 60px;
+  font-size: 140%;
+  text-align: center;
+}
+
+.city-section > p {
+  margin: 0;
+  padding: 15px 15px 30px 15px;
+  font-size: 110%;
+  text-align: center;
+}
+
+.city-div-shadow {
+  height: 5px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#CECECE), to(#EAEAEA));
+  background: linear-gradient(to bottom, #CECECE, #EAEAEA);
+}
+
+.city-div {
+  background-color: #EAEAEA;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px 0;
+}
+
 /* 'Menu' pages css generation */
 /* Themes for specific css themes (Noel, promo,...) */
 /* Vendors for external style like bootstrap or JQuery */

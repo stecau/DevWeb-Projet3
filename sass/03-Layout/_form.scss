@@ -1,0 +1,30 @@
+.form{
+    @include flex-display(column);
+    background-color: $color-form;
+    &__label{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & > i{
+            padding: 0 23px;
+        }
+    }
+    &__input{
+        appearance: none; /* suppress default behaviour */
+        outline: none; /* no border when focus */
+        border: 0;
+        background-color: $color-city-div;
+        &::placeholder{
+            color: $color-texte-primary;
+        }
+    }
+    &__button{
+        appearance: none;
+        border: 0;
+        color: $color-texte-secondary;
+        background: linear-gradient(to top, $color-primary, $color-secondary);
+        padding: 15px 20px;
+        margin: 0 auto 60px auto;
+        border-radius: 30px;
+    }
+}

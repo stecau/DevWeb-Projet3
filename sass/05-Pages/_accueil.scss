@@ -1,0 +1,27 @@
+.city-section{
+    @include flex-display(column);
+    & > h1{
+        margin: 0;
+        padding: 40px 60px 0px 60px;
+        font-size: 140%;
+        text-align: center;
+    }
+    & > p{
+        margin: 0;
+        padding: 15px 15px 30px 15px;
+        font-size: 110%;
+        text-align: center;
+    }
+}
+
+.city-div-shadow{
+    height: 5px;
+    background: linear-gradient(to bottom, $color-shadow, $color-city-div)
+}
+
+.city-div{
+    background-color: $color-city-div;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
