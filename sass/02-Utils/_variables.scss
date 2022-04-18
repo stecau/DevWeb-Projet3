@@ -29,13 +29,19 @@ $breakpoints: (
     max-width: 1920px
 );
 
+/* Footer responsive variables */
+$footer-responsive: (
+    tablette: 50%,
+    desktop:25%
+);
+
 /* ========================================================================== */
 /* ===                              Functions                             === */
 /* ========================================================================== */
 
 /* Function in order to get breaking point in founction of the type of data */
 @function brkpt($type){
-    @if ($type == icon){
+    @if ( ($type == icon) or ($type == desktop) ){
         @return map-get($breakpoints, desktop);
     }@else{ /* Texte */
         @return map-get($breakpoints, mobile);
@@ -56,6 +62,7 @@ $breakpoints: (
 /* ===                               Mixins                               === */
 /* ========================================================================== */
 /* Mixins for media queries */
+    /* For Header */
 @mixin mobile-except($type){
     @if ($type == texte){
         @media screen and (min-width: brkpt($type)){
@@ -64,6 +71,19 @@ $breakpoints: (
     }
     @if ($type == icon){
         @media screen and (min-width: brkpt($type)){
+            @content;
+        }
+    }
+}
+    /* For Footer */
+@mixin footer-responsive($screen-format){
+    @if ($screen-format == tablette){
+        @media screen and (min-width: brkpt(mobile)){
+            @content;
+        }
+    }
+    @if ($screen-format == desktop){
+        @media screen and (min-width: brkpt(desktop)){
             @content;
         }
     }
