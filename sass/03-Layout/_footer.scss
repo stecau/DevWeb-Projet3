@@ -1,0 +1,29 @@
+.footer{
+    background-color: $color-footer;
+    color: $color-texte-secondary;
+    padding: $header-margin;
+    & > h2{
+        font-size: 110%;
+        margin: 0;
+    }
+}
+
+.footer-list{
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    & > li{
+        padding: 5px 0;
+    }
+    &__link{
+        text-decoration: none;
+        color: $color-texte-secondary;
+        font-size: 100%;
+    }
+    &__link > i{
+        padding: 0px 10px 0px 0;
+        font-size: 14px;
+    }
+}
+
