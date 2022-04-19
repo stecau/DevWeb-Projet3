@@ -1,0 +1,42 @@
+.fonction-list{
+    @include flex-display(column, flex-start, flex-start, nowrap);
+    list-style-type: none;
+    padding-left: 20px;
+    & > li{
+        padding: 15px 0;
+        @include flex-display(row, flex-start, center, nowrap)
+    }
+    &__number{
+        background-color: $color-primary;
+        color: $color-texte-secondary;
+        font-size: 90%;
+        padding: 4px 8px 2px 8px;
+        border-radius: 15px;
+        margin-right: 15px;
+        position: relative;
+        z-index: 2;
+    }
+    &__icon{
+        color: $color-quaternary;
+        font-size: 21px;
+        position: relative;
+        z-index: 2;
+        &--selected{
+            color: $color-primary;
+        }
+    }
+    &__texte{
+        width: 176px;
+        margin-right: -20px;
+        padding: 25px 75px;
+        background-color: lighten($color-quaternary, 50%);
+        border-radius: 25px;
+        box-shadow: 0 4px 7px 0px $color-shadow;
+        &--selected{
+            background-color: lighten($color-primary, 35%);
+        }
+        position: relative;
+        left: -53.25px;
+        z-index: 1;
+    }
+}

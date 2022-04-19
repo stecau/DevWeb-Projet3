@@ -22,7 +22,7 @@ h1, .footer > h2 {
   /* Shrikhand font police used for title h1 except 'accueil' page */
 }
 
-[data-name] {
+#acceuil {
   font-family: "Roboto", Verdana, sans-serif;
   /* Roboto font police used for title h1 in 'accueil' page */
 }
@@ -47,8 +47,9 @@ h1, .footer > h2 {
 /* Mixins for media queries */
 /* For Header */
 /* For Footer */
-/* Mixins for link in the nav CSS style */
+/* Mixin for link in the nav CSS style */
 /* Mixin for Flex display */
+/* Mixin for Article + Aside with H2 */
 /* Layouts for css blocks BEM (header, footer, form,...) */
 /* ========================================================================== */
 /* Definition of the bloc_page style */
@@ -128,19 +129,26 @@ h1, .footer > h2 {
 }
 
 .form {
+  background-color: #EAEAEA;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  background-color: #F6F6F6;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: wrap;
+          flex-direction: wrap;
+  margin: auto;
+  width: 100%;
+  padding: 15px 0;
+  -webkit-box-shadow: inset 0px 7px 5px -3px #CECECE;
+          box-shadow: inset 0px 7px 5px -3px #CECECE;
 }
 
 .form__label {
@@ -186,26 +194,69 @@ h1, .footer > h2 {
   color: #000;
 }
 
-.form__button {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  border: 0;
-  color: #fff;
-  background: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
-  background: linear-gradient(to top, #9356DC, #FF79DA);
-  padding: 15px 20px;
-  margin: 0 auto 60px auto;
-  border-radius: 30px;
-  -webkit-box-shadow: 0px 5px 10px 2px #CECECE;
-          box-shadow: 0px 5px 10px 2px #CECECE;
+.fonction-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  width: 100%;
+  list-style-type: none;
+  padding-left: 20px;
 }
 
-.form__button:hover {
-  -webkit-box-shadow: 0px 5px 10px 5px #CECECE;
-          box-shadow: 0px 5px 10px 5px #CECECE;
-  background: -webkit-gradient(linear, left bottom, left top, from(#a16be0), to(#ff93e1));
-  background: linear-gradient(to top, #a16be0, #ff93e1);
+.fonction-list > li {
+  padding: 15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  width: 100%;
+}
+
+.fonction-list__number {
+  background-color: #9356DC;
+  color: #fff;
+  font-size: 90%;
+  padding: 4px 8px 2px 8px;
+  border-radius: 15px;
+  margin-right: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.fonction-list__icon {
+  color: #777777;
+  font-size: 21px;
+  position: relative;
+  z-index: 2;
+}
+
+.fonction-list__icon--selected {
+  color: #9356DC;
+}
+
+.fonction-list__texte {
+  width: 176px;
+  margin-right: -20px;
+  padding: 25px 75px;
+  background-color: #f7f7f7;
+  border-radius: 25px;
+  -webkit-box-shadow: 0 4px 7px 0px #CECECE;
+          box-shadow: 0 4px 7px 0px #CECECE;
+  position: relative;
+  left: -53.25px;
+  z-index: 1;
+}
+
+.fonction-list__texte--selected {
+  background-color: #f2eafb;
 }
 
 .footer {
@@ -227,6 +278,10 @@ h1, .footer > h2 {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: wrap;
+          flex-direction: wrap;
 }
 
 .footer-list > li {
@@ -260,6 +315,28 @@ h1, .footer > h2 {
 }
 
 /* Components for css INDEPENDANT blocks BEM (button,...) */
+.button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  color: #fff;
+  background: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  padding: 15px 20px;
+  margin: 0 0 60px 0;
+  border-radius: 30px;
+  -webkit-box-shadow: 0px 5px 10px 2px #CECECE;
+          box-shadow: 0px 5px 10px 2px #CECECE;
+}
+
+.button:hover {
+  -webkit-box-shadow: 0px 8px 10px 5px #c1c1c1;
+          box-shadow: 0px 8px 10px 5px #c1c1c1;
+  background: -webkit-gradient(linear, left bottom, left top, from(#a16be0), to(#ff93e1));
+  background: linear-gradient(to top, #a16be0, #ff93e1);
+}
+
 /* Pages for css specific blocks code in several pages (specific rules in a page) */
 /* 'Accueil' page css generation */
 .city-section {
@@ -273,8 +350,10 @@ h1, .footer > h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #F6F6F6;
 }
 
 .city-section > h1 {
@@ -291,21 +370,50 @@ h1, .footer > h2 {
   text-align: center;
 }
 
-.city-div-shadow {
-  height: 5px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#CECECE), to(#EAEAEA));
-  background: linear-gradient(to bottom, #CECECE, #EAEAEA);
-}
-
-.city-div {
-  background-color: #EAEAEA;
+.resto-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 10px 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+.resto-aside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.resto-aside > h2 {
+  margin: 0;
+  padding: 50px 0 20px 20px;
+}
+
+.resto-article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  width: 100%;
+  background-color: #f7f7f7;
+}
+
+.resto-article > h2 {
+  margin: 0;
+  padding: 50px 0 20px 20px;
 }
 
 /* 'Menu' pages css generation */

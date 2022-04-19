@@ -1,5 +1,6 @@
 .city-section{
-    @include flex-display(column);
+    @include flex-display(column, center, center, nowrap, no-adjust);
+    background-color: $color-city-section;
     & > h1{
         margin: 0;
         padding: 40px 60px 0px 60px;
@@ -14,14 +15,16 @@
     }
 }
 
-.city-div-shadow{
-    height: 5px;
-    background: linear-gradient(to bottom, $color-shadow, $color-city-div)
+.resto-section{
+    @include flex-display(column-reverse, flex-start, flex-start, nowrap, no-adjust)
 }
 
-.city-div{
-    background-color: $color-city-div;
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
+.resto-aside{
+    @include article-aside-h2-mixin;
+    margin-bottom: 50px;
+}
+
+.resto-article{
+    @include article-aside-h2-mixin;
+    background-color: lighten($color-quaternary, 50%);
 }

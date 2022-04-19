@@ -5,8 +5,9 @@
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
-$color-city-div: #EAEAEA;
-$color-form: #F6F6F6;
+$color-quaternary: #777777;
+$color-form: #EAEAEA;
+$color-city-section: #F6F6F6;
 $color-shadow: #CECECE;
 $color-footer: #353535;
 $color-texte-primary: #000;
@@ -93,7 +94,7 @@ $footer-responsive: (
     }
 }
 
-/* Mixins for link in the nav CSS style */
+/* Mixin for link in the nav CSS style */
 @mixin nav-link-mixin($type){
     font-size: $icon-nav-size;
     margin-top: ($img-header-size - $icon-nav-size) / 2 ;
@@ -109,9 +110,37 @@ $footer-responsive: (
 }
 
 /* Mixin for Flex display */
-@mixin flex-display($direction: row, $main-dir: center, $secondary-dir: center){
+@mixin flex-display($direction: row, $main-dir: center, $secondary-dir: center, $wrap: wrap, $adjust: adjust){
     display: flex;
-    flex-direction: $direction;
-    justify-content: $main-dir;
-    align-content: $secondary-dir;
+    @if ( $direction != row ){
+        flex-direction: $direction;
+    }
+    @if ( $main-dir != flex-start ){
+        justify-content: $main-dir;
+    }
+    @if ( ($secondary-dir != flex-start) and $wrap == nowrap ){
+        align-items: $secondary-dir;
+    }
+    @if ( ($secondary-dir != flex-start) and $wrap == wrap ){
+        align-content: $secondary-dir;
+    }
+    @if ( $wrap != nowrap ){
+        flex-wrap: $wrap;
+    }
+    @if ( $wrap != nowrap ){
+        flex-direction: $wrap;
+    }
+    @if ( $adjust == adjust ){
+        margin: auto;
+        width: 100%;
+    }
+}
+
+/* Mixin for Article + Aside with H2 */
+@mixin article-aside-h2-mixin(){
+    @include flex-display(column, flex-start, flex-start, nowrap);
+    & > h2{
+        margin: 0;
+        padding: 50px 0 20px 20px; 
+    }
 }

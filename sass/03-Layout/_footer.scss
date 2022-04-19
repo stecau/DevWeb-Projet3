@@ -11,8 +11,7 @@
 .footer-list{
     list-style-type: none;
     padding-left: 0;
-    display: flex;
-    flex-wrap: wrap;
+    @include flex-display(row, flex-start, flex-start, wrap, no-adjust);
     & > li{
         box-sizing: border-box;
         width: 100%;

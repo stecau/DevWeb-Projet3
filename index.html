@@ -27,34 +27,33 @@
             </nav>
         </header>
 
-        <!-- Creation of the 'formulaire' section -->
-        <form class="form" method="post" action="nothing">
-            <!-- Section for Formulaire description -->
-            <section class="city-section">
-                <div class="city-div-shadow"></div>
-                <div class="city-div">
-                    <label class="form__label" for="ville"><i class="fas fa-map-marker-alt"></i></label>
-                    <input type="search" name="ville" id="ville" placeholder="Paris, Belleville" class="form__input" />
-                </div>
-                <h1 data-name="acceuil">
-                    Réserver le menu qui vous convient
-                </h1>
-                <p>
-                    Découvrer des restaurants d'exception, sélectionnés par nos soins
-                </p>
-            </section>
-
-            <!-- Button for form submitting -->
-            <input type="submit" value="Explorer nos restaurants" name="button" id="button" class="form__button" />
-        </form>
+        <!-- Section for Formulaire description -->
+        <section class="city-section">
+            <!-- Creation of the 'formulaire' section -->
+            <form class="form" method="post" action="nothing">
+                <label class="form__label" for="ville"><i class="fas fa-map-marker-alt"></i></label>
+                <input type="search" name="ville" id="ville" placeholder="Paris, Belleville" class="form__input" />
+            </form>
+            <h1 id="acceuil">
+                Réserver le menu qui vous convient
+            </h1>
+            <p>
+                Découvrer des restaurants d'exception, sélectionnés par nos soins
+            </p>
+            <a href="#s_resto">
+                <button type="button" class="button">
+                    Explorer nos restaurants
+                </button>
+            </a>
+        </section>
 
         <!-- Creation of the 'Restaurant' section -->
-        <section class="resto-section" id="s_resto">
+        <section class="resto-section">
             <!-- Hébergement article -->
-            <article class="resto-article">
+            <article class="resto-article" id="s_resto">
                 <!-- Title for restaurant -->
                 <h2>
-                    Resturants
+                    Restaurants
                 </h2>
 
                 <!-- Restaurant container -->
@@ -169,9 +168,21 @@
                 </h2>
                 <!-- list -->
                 <ul class="fonction-list">
-                    <li><span class="fonction-list__number">1</span><i class="fas fa-mobile-alt"></i><span>Choisissez un restaurant</span></li>
-                    <li><span class="fonction-list__number">2</span><i class="fas fa-list"></i><span>Composez votre menu</span></li>
-                    <li><span class="fonction-list__number">3</span><i class="fas fa-store"></i><span>Dégustez au restaurant</span></li>
+                    <li>
+                        <span class="fonction-list__number">1</span>
+                        <i class="fas fa-mobile-alt fa-fw fonction-list__icon"></i>
+                        <span class="fonction-list__texte">Choisissez un restaurant</span>
+                    </li>
+                    <li>
+                        <span class="fonction-list__number">2</span>
+                        <i class="fas fa-list fa-fw fonction-list__icon"></i>
+                        <span class="fonction-list__texte">Composez votre menu</span>
+                    </li>
+                    <li>
+                        <span class="fonction-list__number">3</span>
+                        <i class="fas fa-store fa-fw fonction-list__icon fonction-list__icon--selected"></i>
+                        <span class="fonction-list__texte fonction-list__texte--selected">Dégustez au restaurant</span>
+                    </li>
                 </ul>
             </aside>
         </section>
