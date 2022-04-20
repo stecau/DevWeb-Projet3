@@ -13,6 +13,9 @@
         font-size: 110%;
         text-align: center;
     }
+    & > a{
+        text-decoration: none;
+    }
 }
 
 .resto-section{
@@ -27,4 +30,25 @@
 .resto-article{
     @include article-aside-h2-mixin;
     background-color: lighten($color-quaternary, 50%);
+}
+
+.resto-container{
+    @include flex-display(row, space-between, space-between, wrap);
+    box-sizing: border-box;
+    padding: 0 20px;
+    & > a{
+        box-sizing: border-box;
+        text-decoration: none; /* No link default style */
+        color: #000;
+        width: 100%;
+        margin-bottom: 15px;
+        border-radius: 20px;
+        box-shadow: 0 4px 7px 0px $color-shadow;
+        position: relative;
+        @each $key, $value in $fig-responsive{
+            @include responsive($key){
+                width: $value;
+            }
+        }
+    }
 }

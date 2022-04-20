@@ -33,9 +33,12 @@ h1, .footer > h2 {
 /* ========================================================================== */
 /* Color variables */
 /* Size and border definition */
+/* Dimension for fonctionnement items */
 /* Display variables */
 /* Breakpoints variables */
+/* format - breakpoints correspondance */
 /* Footer responsive variables */
+/* resto-fig(link) responsive variables */
 /* ========================================================================== */
 /* ===                              Functions                             === */
 /* ========================================================================== */
@@ -46,7 +49,7 @@ h1, .footer > h2 {
 /* ========================================================================== */
 /* Mixins for media queries */
 /* For Header */
-/* For Footer */
+/* For Footer and resto-container */
 /* Mixin for link in the nav CSS style */
 /* Mixin for Flex display */
 /* Mixin for Article + Aside with H2 */
@@ -107,7 +110,7 @@ h1, .footer > h2 {
   display: block;
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1135px) {
   .nav-link__icon--display {
     display: none;
   }
@@ -202,10 +205,36 @@ h1, .footer > h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: auto;
-  width: 100%;
   list-style-type: none;
   padding-left: 20px;
+}
+
+@media screen and (min-width: 769px) {
+  .fonction-list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1135px) {
+  .fonction-list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .fonction-list > li {
@@ -216,8 +245,6 @@ h1, .footer > h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: auto;
-  width: 100%;
 }
 
 .fonction-list__number {
@@ -234,6 +261,7 @@ h1, .footer > h2 {
 .fonction-list__icon {
   color: #777777;
   font-size: 21px;
+  min-width: 26.25px;
   position: relative;
   z-index: 2;
 }
@@ -251,12 +279,80 @@ h1, .footer > h2 {
   -webkit-box-shadow: 0 4px 7px 0px #CECECE;
           box-shadow: 0 4px 7px 0px #CECECE;
   position: relative;
-  left: -53.25px;
+  left: -53.3px;
   z-index: 1;
 }
 
 .fonction-list__texte--selected {
   background-color: #f2eafb;
+}
+
+.resto-fig {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.resto-fig > img {
+  width: 100%;
+  height: 175px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* keep image proportion and adjust with image area */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.resto-fig__caption {
+  background-color: #fff;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 20px 15px 20px;
+}
+
+.resto-fig__title {
+  margin: 0;
+  padding-top: 18px;
+}
+
+.resto-fig__text {
+  margin: 0;
+  padding-top: 5px;
+}
+
+.resto-fig__heart {
+  margin: 5px;
+  font-size: x-large;
+}
+
+.resto-fig__heart > .fas {
+  display: none;
+}
+
+.resto-fig__heart:hover > .far {
+  display: none;
+}
+
+.resto-fig__heart:hover > .fas {
+  display: inline-block;
+  color: transparent;
+  background-clip: text;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
+  background-image: linear-gradient(to top, #9356DC, #FF79DA);
 }
 
 .footer {
@@ -297,7 +393,7 @@ h1, .footer > h2 {
   }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1135px) {
   .footer-list > li {
     width: 25%;
   }
@@ -337,6 +433,30 @@ h1, .footer > h2 {
   background: linear-gradient(to top, #a16be0, #ff93e1);
 }
 
+.new {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 80px;
+  background-color: #99E2D0;
+  color: #278870;
+  padding: 6px;
+  border-radius: 3px;
+  font-size: 90%;
+  text-align: center;
+}
+
+.new--enable {
+  display: block;
+}
+
+.new--disable {
+  display: none;
+}
+
 /* Pages for css specific blocks code in several pages (specific rules in a page) */
 /* 'Accueil' page css generation */
 .city-section {
@@ -368,6 +488,10 @@ h1, .footer > h2 {
   padding: 15px 15px 30px 15px;
   font-size: 110%;
   text-align: center;
+}
+
+.city-section > a {
+  text-decoration: none;
 }
 
 .resto-section {
@@ -414,6 +538,54 @@ h1, .footer > h2 {
 .resto-article > h2 {
   margin: 0;
   padding: 50px 0 20px 20px;
+}
+
+.resto-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: wrap;
+          flex-direction: wrap;
+  margin: auto;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.resto-container > a {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  /* No link default style */
+  color: #000;
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 4px 7px 0px #CECECE;
+          box-shadow: 0 4px 7px 0px #CECECE;
+  position: relative;
+}
+
+@media screen and (min-width: 769px) {
+  .resto-container > a {
+    width: 48%;
+  }
+}
+
+@media screen and (min-width: 1135px) {
+  .resto-container > a {
+    width: 24%;
+  }
 }
 
 /* 'Menu' pages css generation */

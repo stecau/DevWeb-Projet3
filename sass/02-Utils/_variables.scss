@@ -6,6 +6,7 @@ $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 $color-quaternary: #777777;
+$color-card: #fff;
 $color-form: #EAEAEA;
 $color-city-section: #F6F6F6;
 $color-shadow: #CECECE;
@@ -19,6 +20,18 @@ $img-header-size: 29px;
 $header-margin: 23px;
 $icon-nav-size: 18px;
 
+/* Dimension for fonctionnement items */
+$dim-fonction-items: (
+    number-content: 8.1px,
+    number-pad: 8px,
+    number-margin: 15px,
+    icon-content: 26.25px,
+);
+$left-move: map-get($dim-fonction-items, number-content) / 2 +
+            map-get($dim-fonction-items, number-pad) +
+            map-get($dim-fonction-items, number-margin) +
+            map-get($dim-fonction-items, icon-content);
+
 /* Display variables */
 $icon-nav-display: block;
 $text-nav-display: none;
@@ -30,14 +43,26 @@ $type-nav-display: (
 /* Breakpoints variables */
 $breakpoints: (
     mobile: 769px,
-    desktop: 1025px,
+    desktop: 1135px,
     max-width: 1920px
+);
+
+/* format - breakpoints correspondance */
+$responsive: (
+    tablette: mobile,
+    desktop: desktop
 );
 
 /* Footer responsive variables */
 $footer-responsive: (
     tablette: 50%,
     desktop:25%
+);
+
+/* resto-fig(link) responsive variables */
+$fig-responsive: (
+    tablette: 48%,
+    desktop:24%
 );
 
 /* ========================================================================== */
@@ -48,7 +73,7 @@ $footer-responsive: (
 @function brkpt($type){
     @if ( ($type == icon) or ($type == desktop) ){
         @return map-get($breakpoints, desktop);
-    }@else{ /* Texte */
+    }@else{ /* Texte or mobile */
         @return map-get($breakpoints, mobile);
     }
 }
@@ -80,17 +105,10 @@ $footer-responsive: (
         }
     }
 }
-    /* For Footer */
-@mixin footer-responsive($screen-format){
-    @if ($screen-format == tablette){
-        @media screen and (min-width: brkpt(mobile)){
-            @content;
-        }
-    }
-    @if ($screen-format == desktop){
-        @media screen and (min-width: brkpt(desktop)){
-            @content;
-        }
+    /* For Footer and resto-container */
+@mixin responsive($screen-format){
+    @media screen and ( min-width: brkpt(map-get($responsive, $screen-format)) ){
+        @content;
     }
 }
 

@@ -1,0 +1,42 @@
+.resto-fig{
+    margin: 0;
+    @include flex-display(column, flex-start, flex-start, nowrap, no-adjust);
+    & > img{
+        width: 100%;
+        height: 175px;
+        object-fit: cover; /* keep image proportion and adjust with image area */
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    &__caption{
+        background-color: $color-card;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        @include flex-display(row, space-between, center, nowrap, no-adjust);
+        padding: 0 20px 15px 20px;
+    }
+    &__title{
+        margin: 0;
+        padding-top: 18px; 
+    }
+    &__text{
+        margin: 0;
+        padding-top: 5px;
+    }
+    &__heart{
+        margin: 5px;
+        font-size: x-large;
+        & > .fas{
+            display: none;
+        }
+        &:hover > .far{
+            display: none;
+        }
+        &:hover > .fas{
+            display: inline-block;
+            color: transparent;
+            background-clip: text;
+            background-image: linear-gradient(to top, $color-primary, $color-secondary);
+        }
+    }
+}

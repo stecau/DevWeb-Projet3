@@ -9,11 +9,13 @@
 @import "./03-Layout/header";
 @import "./03-Layout/form";
 @import "./03-Layout/fonctionnement";
+@import "./03-Layout/resto-fig";
 
 @import "./03-Layout/footer";
 
 /* Components for css INDEPENDANT blocks BEM (button,...) */
 @import "./04-Compsants/button";
+@import "./04-Compsants/new";
 
 /* Pages for css specific blocks code in several pages (specific rules in a page) */
     /* 'Accueil' page css generation */
