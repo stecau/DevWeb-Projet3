@@ -7,6 +7,9 @@
         max-height: 450px;
         object-fit: cover; /* keep image proportion and adjust with image area */
     }
+    & > .rogne{
+        height: calc(100vw * 0.67);
+    }
     &__caption{
         background-color: lighten($color-quaternary, 50%);
         border-top-left-radius: 40px;

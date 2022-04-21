@@ -439,6 +439,10 @@ h1, .footer > h2 {
   /* keep image proportion and adjust with image area */
 }
 
+.menu-fig > .rogne {
+  height: calc(100vw * 0.67);
+}
+
 .menu-fig__caption {
   background-color: #f7f7f7;
   border-top-left-radius: 40px;
