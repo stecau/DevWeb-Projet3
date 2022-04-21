@@ -58,12 +58,20 @@ h1, .footer > h2 {
 /* ========================================================================== */
 /* Definition of the bloc_page style */
 /* Computer screen ; standard style and others with 'viewport' param in html */
-#bloc_page {
+#bloc-page {
   max-width: 1920px;
   /* Define max width equal to 1920px */
+  margin: auto;
 }
 
 /* BEM for header */
+.header {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .header > img {
   display: block;
   /* Convertion img in block in order to center itself */
@@ -333,7 +341,7 @@ h1, .footer > h2 {
   -webkit-box-shadow: 0 4px 12px -2px #CECECE;
           box-shadow: 0 4px 12px -2px #CECECE;
   position: relative;
-  left: -53.3px;
+  left: -50.8px;
   z-index: 1;
 }
 

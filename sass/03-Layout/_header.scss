@@ -1,7 +1,11 @@
-.header > img{
-    display: block; /* Convertion img in block in order to center itself */
-    margin: $header-margin auto; /* center img with margin auto for left and right and 23px for top and bottom */
-    height: $img-header-size; /* Difine height size to get good img size */
+.header{
+    position: relative;
+    display: flex;
+    & > img{
+        display: block; /* Convertion img in block in order to center itself */
+        margin: $header-margin auto; /* center img with margin auto for left and right and 23px for top and bottom */
+        height: $img-header-size; /* Difine height size to get good img size */
+    }
 }
 
 .nav{

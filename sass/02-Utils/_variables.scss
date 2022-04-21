@@ -25,7 +25,7 @@ $dim-fonction-items: (
     number-content: 8.1px,
     number-pad: 8px,
     number-margin: 15px,
-    icon-content: 26.25px,
+    icon-content: 23.75px,
 );
 $left-move: map-get($dim-fonction-items, number-content) / 2 +
             map-get($dim-fonction-items, number-pad) +
