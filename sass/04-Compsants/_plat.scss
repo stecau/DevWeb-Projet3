@@ -1,0 +1,49 @@
+.plat{
+    @include flex-display(row, flex-start, center, nowrap, no-adjust);
+    background-color: $color-card;
+    border-radius: 15px;
+    box-shadow: 0 2px 7px -1px $color-shadow;
+    margin: 7px 0;
+    &__description{
+        margin: 12px auto 12px 10px;
+        min-width: 0px;
+        @include flex-display(column, flex-start, flex-start, nowrap, no-adjust);
+        & > h3{
+            margin: 0;
+            padding-bottom: 7px;
+            font-size: 110%;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        & > p{
+            margin: 0;
+            font-size: 90%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    &__prix{
+        margin: auto 20px 12px 10px;
+        font-weight: 600;
+        font-size: 90%;
+    }
+    &__icon{
+        display: none;
+        padding: 24px;
+        font-size: 130%;
+        background-color: $color-tertiary;
+        color: $color-card;
+        text-align: center;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+}
+
+.plat{
+    &:hover .plat__icon{
+        display:block;
+    }
+}

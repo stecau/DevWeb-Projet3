@@ -9,7 +9,7 @@
     }
     & > p{
         margin: 0;
-        padding: 15px 15px 30px 15px;
+        padding: 15px 15px 0 15px;
         font-size: 110%;
         text-align: center;
     }
@@ -30,6 +30,7 @@
 .resto-article{
     @include article-aside-h2-mixin;
     background-color: lighten($color-quaternary, 50%);
+    padding-bottom: 50px;
 }
 
 .resto-container{

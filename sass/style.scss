@@ -5,16 +5,27 @@
 @import "./02-Utils/variables";
 
 /* Layouts for css blocks BEM (header, footer, form,...) */
+    /* BEM for parent div inside body */
 @import "./03-Layout/bloc-page";
+    /* BEM for header */
 @import "./03-Layout/header";
+    /* BEM for formulary */
 @import "./03-Layout/form";
-@import "./03-Layout/fonctionnement";
-@import "./03-Layout/resto-fig";
-
+    /* BEM for footer */
 @import "./03-Layout/footer";
 
 /* Components for css INDEPENDANT blocks BEM (button,...) */
+    /* BEM for ohmyfood introduction*/
+@import "./04-Compsants/fonctionnement";
+    /* BEM for restaurant preview (figure structure) */
+@import "./04-Compsants/resto-fig";
+    /* BEM for restaurant menu selection (figure structure) */
+@import "./04-Compsants/menu-fig";
+    /* BEM for plat presentation in menu */
+@import "./04-Compsants/plat";
+    /* BEM for button */
 @import "./04-Compsants/button";
+    /* BEM for new add-on */
 @import "./04-Compsants/new";
 
 /* Pages for css specific blocks code in several pages (specific rules in a page) */
@@ -25,5 +36,6 @@
 @import "./05-Pages/menu";
 
 /* Themes for specific css themes (Noel, promo,...) */
-
+    /* No specification */
 /* Vendors for external style like bootstrap or JQuery */
+    /* No specification */

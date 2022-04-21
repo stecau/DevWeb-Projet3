@@ -1,0 +1,26 @@
+.menu{
+    @include flex-display(column, flex-start, flex-start, nowrap, no-adjust);
+    padding: 10px 15px;
+    background-color: lighten($color-quaternary, 50%);
+    &-section{
+        margin-bottom: 5px;
+        & > h2{
+            margin: 0;
+            padding: 35px 5px 17px 5px;
+            font-size: 100%;
+            font-weight: 100;
+            text-transform: uppercase;            
+        }
+        & .souligne{
+            text-decoration: underline;
+            text-decoration-color: $color-tertiary;
+            text-decoration-thickness: 3px;
+            text-underline-offset: 7px;
+
+
+        }
+    }
+    &-fieldset{
+        @include flex-display(column, flex-start, flex-start, nowrap, no-adjust)
+    }
+}

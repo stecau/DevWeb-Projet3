@@ -4,9 +4,13 @@
     color: $color-texte-secondary;
     background: linear-gradient(to top, $color-primary, $color-secondary);
     padding: 15px 20px;
-    margin: 0 0 60px 0;
+    margin: 30px auto 60px auto;
     border-radius: 30px;
     box-shadow: 0px 5px 10px 2px $color-shadow;
+    &--commande{
+        margin: 40px auto 70px auto;
+        padding: 15px 50px;
+    }
     &:hover{
         box-shadow: 0px 8px 10px 5px darken($color-shadow, 5%);
         background: linear-gradient(to top, lighten($color-primary, 5%), lighten($color-secondary, 5%));

@@ -1,0 +1,42 @@
+.menu-fig{
+    margin: 0;
+    @include flex-display(column, flex-start, flex-start, nowrap, no-adjust);
+    position: relative;
+    & > img{
+        width: 100%;
+        max-height: 450px;
+        object-fit: cover; /* keep image proportion and adjust with image area */
+    }
+    &__caption{
+        background-color: lighten($color-quaternary, 50%);
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        box-sizing: border-box;
+        @include flex-display(row, space-between, center, nowrap, adjust);
+        padding: 20px 20px 0 20px;
+        position: absolute;
+        bottom: -10px;
+        & > h1{
+            margin: 0;
+            padding-top: 18px;
+            font-size: 160%; 
+        }
+    }
+    &__heart{
+        margin-right: 20px;
+        padding-top: 18px;
+        font-size: x-large;
+        & > .fas{
+            display: none;
+        }
+        &:hover > .far{
+            display: none;
+        }
+        &:hover > .fas{
+            display: inline-block;
+            color: transparent;
+            background-clip: text;
+            background-image: linear-gradient(to top, $color-primary, $color-secondary);
+        }
+    }
+}
