@@ -12,6 +12,7 @@
         padding: 15px 50px;
     }
     &:hover{
+        transition: all 2s;
         box-shadow: 0px 8px 10px 5px darken($color-shadow, 5%);
         background: linear-gradient(to top, lighten($color-primary, 5%), lighten($color-secondary, 5%));
     }

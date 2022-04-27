@@ -387,12 +387,12 @@ h1, .footer > h2 {
   padding: 0 20px 15px 20px;
 }
 
-.resto-fig__title {
+.resto-fig__description > h3 {
   margin: 0;
   padding-top: 18px;
 }
 
-.resto-fig__text {
+.resto-fig__description > p {
   margin: 0;
   padding-top: 5px;
 }
@@ -400,22 +400,7 @@ h1, .footer > h2 {
 .resto-fig__heart {
   margin: 5px;
   font-size: x-large;
-}
-
-.resto-fig__heart > .fas {
-  display: none;
-}
-
-.resto-fig__heart:hover > .far {
-  display: none;
-}
-
-.resto-fig__heart:hover > .fas {
-  display: inline-block;
-  color: transparent;
-  background-clip: text;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
-  background-image: linear-gradient(to top, #9356DC, #FF79DA);
+  position: relative;
 }
 
 /* BEM for restaurant menu selection (figure structure) */
@@ -475,22 +460,7 @@ h1, .footer > h2 {
   margin-right: 20px;
   padding-top: 18px;
   font-size: x-large;
-}
-
-.menu-fig__heart > .fas {
-  display: none;
-}
-
-.menu-fig__heart:hover > .far {
-  display: none;
-}
-
-.menu-fig__heart:hover > .fas {
-  display: inline-block;
-  color: transparent;
-  background-clip: text;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
-  background-image: linear-gradient(to top, #9356DC, #FF79DA);
+  position: relative;
 }
 
 /* BEM for plat presentation in menu */
@@ -581,6 +551,8 @@ h1, .footer > h2 {
 }
 
 .button:hover {
+  -webkit-transition: all 2s;
+  transition: all 2s;
   -webkit-box-shadow: 0px 8px 10px 5px #c1c1c1;
           box-shadow: 0px 8px 10px 5px #c1c1c1;
   background: -webkit-gradient(linear, left bottom, left top, from(#a16be0), to(#ff93e1));
@@ -610,6 +582,30 @@ h1, .footer > h2 {
 
 .new--disable {
   display: none;
+}
+
+/* BEM for "J'aime" behaviour */
+.jaime > .fas.fa-heart {
+  opacity: 0;
+  color: transparent;
+  background: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.jaime > .far.fa-heart {
+  opacity: 1;
+  position: absolute;
+  z-index: 1;
+}
+
+.jaime:hover > .far.fa-heart {
+  opacity: 0;
+}
+
+.jaime:hover > .fas.fa-heart {
+  opacity: 1;
 }
 
 /* Pages for css specific blocks code in several pages (specific rules in a page) */

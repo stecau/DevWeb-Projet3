@@ -29,17 +29,6 @@
         margin-right: 20px;
         padding-top: 18px;
         font-size: x-large;
-        & > .fas{
-            display: none;
-        }
-        &:hover > .far{
-            display: none;
-        }
-        &:hover > .fas{
-            display: inline-block;
-            color: transparent;
-            background-clip: text;
-            background-image: linear-gradient(to top, $color-primary, $color-secondary);
-        }
+        position: relative;
     }
 }

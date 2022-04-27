@@ -15,28 +15,17 @@
         @include flex-display(row, space-between, center, nowrap, no-adjust);
         padding: 0 20px 15px 20px;
     }
-    &__title{
+    &__description > h3{
         margin: 0;
         padding-top: 18px; 
     }
-    &__text{
+    &__description > p{
         margin: 0;
         padding-top: 5px;
     }
     &__heart{
         margin: 5px;
         font-size: x-large;
-        & > .fas{
-            display: none;
-        }
-        &:hover > .far{
-            display: none;
-        }
-        &:hover > .fas{
-            display: inline-block;
-            color: transparent;
-            background-clip: text;
-            background-image: linear-gradient(to top, $color-primary, $color-secondary);
-        }
+        position: relative;
     }
 }
