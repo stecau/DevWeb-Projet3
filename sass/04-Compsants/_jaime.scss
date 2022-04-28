@@ -1,20 +1,65 @@
 .jaime{
+    position: relative;
+    overflow: hidden;
     & > .fas.fa-heart{
         opacity: 0;
         color: transparent;
-        background: linear-gradient(to top, $color-primary, $color-secondary);
-        background-clip: text;
-        -webkit-background-clip: text;
+        background: linear-gradient(to top, $color-primary, $color-secondary); /* Attention : 'background' first and after 'background-clip: text' */
+        background-clip: text; /* Attention : 'background-clip: text' after background */
+        -webkit-background-clip: text; /* Attention : webkit not written by sass */
     }
     & > .far.fa-heart{
         opacity: 1;
         position: absolute;
         z-index: 1;
     }
+    &__voile{
+        opacity: 0;
+        width: 24px;
+        height: 24px;
+        background-color: lighten($color-quaternary, 50%);;
+        position: absolute;
+        bottom: 4px;
+        z-index: 2;
+        &--background{
+            background-color: $color-card;
+        }
+    }
+    &__vague{
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        width: 72px;
+        height: 24px;
+        background-color: transparent;
+        position: absolute;
+        bottom: -2px;
+        right: 0;
+        z-index: 3;
+        & > div{
+            width: 16%;
+            height: 25%;
+            background-color: $color-card;
+            // background-color: black;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+
     &:hover > .far.fa-heart{
         opacity: 0;
     }
     &:hover > .fas.fa-heart{
         opacity: 1;
+    }
+    &:hover > .jaime__voile{
+        opacity: 1;
+        transform: translateY(-27px);
+        transition: transform 4s;
+    }
+    &:hover > .jaime__vague{
+        opacity: 1;
+        transform: translate(48px, -27px);
+        transition: transform 3s;
     }
 }

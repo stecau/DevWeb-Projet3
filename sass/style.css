@@ -400,7 +400,6 @@ h1, .footer > h2 {
 .resto-fig__heart {
   margin: 5px;
   font-size: x-large;
-  position: relative;
 }
 
 /* BEM for restaurant menu selection (figure structure) */
@@ -460,7 +459,6 @@ h1, .footer > h2 {
   margin-right: 20px;
   padding-top: 18px;
   font-size: x-large;
-  position: relative;
 }
 
 /* BEM for plat presentation in menu */
@@ -585,13 +583,21 @@ h1, .footer > h2 {
 }
 
 /* BEM for "J'aime" behaviour */
+.jaime {
+  position: relative;
+  overflow: hidden;
+}
+
 .jaime > .fas.fa-heart {
   opacity: 0;
   color: transparent;
   background: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
   background: linear-gradient(to top, #9356DC, #FF79DA);
+  /* Attention : 'background' first and after 'background-clip: text' */
   background-clip: text;
+  /* Attention : 'background-clip: text' after background */
   -webkit-background-clip: text;
+  /* Attention : webkit not written by sass */
 }
 
 .jaime > .far.fa-heart {
@@ -600,12 +606,73 @@ h1, .footer > h2 {
   z-index: 1;
 }
 
+.jaime__voile {
+  opacity: 0;
+  width: 24px;
+  height: 24px;
+  background-color: #f7f7f7;
+  position: absolute;
+  bottom: 4px;
+  z-index: 2;
+}
+
+.jaime__voile--background {
+  background-color: #fff;
+}
+
+.jaime__vague {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 72px;
+  height: 24px;
+  background-color: transparent;
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  z-index: 3;
+}
+
+.jaime__vague > div {
+  width: 16%;
+  height: 25%;
+  background-color: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 .jaime:hover > .far.fa-heart {
   opacity: 0;
 }
 
 .jaime:hover > .fas.fa-heart {
   opacity: 1;
+}
+
+.jaime:hover > .jaime__voile {
+  opacity: 1;
+  -webkit-transform: translateY(-27px);
+          transform: translateY(-27px);
+  -webkit-transition: -webkit-transform 4s;
+  transition: -webkit-transform 4s;
+  transition: transform 4s;
+  transition: transform 4s, -webkit-transform 4s;
+}
+
+.jaime:hover > .jaime__vague {
+  opacity: 1;
+  -webkit-transform: translate(48px, -27px);
+          transform: translate(48px, -27px);
+  -webkit-transition: -webkit-transform 3s;
+  transition: -webkit-transform 3s;
+  transition: transform 3s;
+  transition: transform 3s, -webkit-transform 3s;
 }
 
 /* Pages for css specific blocks code in several pages (specific rules in a page) */
