@@ -4,6 +4,7 @@
     border-radius: 15px;
     box-shadow: 0 2px 7px -1px $color-shadow;
     margin: 7px 0;
+    overflow: hidden;
     &__description{
         margin: 12px auto 12px 10px;
         min-width: 0px;
@@ -31,19 +32,32 @@
         font-size: 90%;
     }
     &__icon{
-        display: none;
-        padding: 24px;
-        font-size: 130%;
+        box-sizing: border-box;
+        padding: 23px;
         background-color: $color-tertiary;
-        color: $color-card;
         text-align: center;
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
+        &--animationTranslate {
+            overflow: hidden;
+            width: 0px;
+            min-width: 0px;
+            transition: all 600ms ease-in-out;
+        }  
+        &--animationRotate {
+            font-size: 130%;
+            color: $color-card;
+            transform: rotate(-270deg);
+            transition: transform 300ms 300ms ease-in-out;
+        }
     }
-}
-
-.plat{
-    &:hover .plat__icon{
-        display:block;
+    &:hover{
+        & .plat__icon--animationTranslate{
+            width: 66.8px;
+            min-width: 66.8px;
+        }
+        & .plat__icon--animationRotate{
+            transform: rotate(0);
+        }
     }
 }

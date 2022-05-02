@@ -474,6 +474,7 @@ h1, .footer > h2 {
   -webkit-box-shadow: 0 2px 7px -1px #CECECE;
           box-shadow: 0 2px 7px -1px #CECECE;
   margin: 7px 0;
+  overflow: hidden;
 }
 
 .plat__description {
@@ -513,18 +514,42 @@ h1, .footer > h2 {
 }
 
 .plat__icon {
-  display: none;
-  padding: 24px;
-  font-size: 130%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 23px;
   background-color: #99E2D0;
-  color: #fff;
   text-align: center;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 
-.plat:hover .plat__icon {
-  display: block;
+.plat__icon--animationTranslate {
+  overflow: hidden;
+  width: 0px;
+  min-width: 0px;
+  -webkit-transition: all 600ms ease-in-out;
+  transition: all 600ms ease-in-out;
+}
+
+.plat__icon--animationRotate {
+  font-size: 130%;
+  color: #fff;
+  -webkit-transform: rotate(-270deg);
+          transform: rotate(-270deg);
+  -webkit-transition: -webkit-transform 300ms 300ms ease-in-out;
+  transition: -webkit-transform 300ms 300ms ease-in-out;
+  transition: transform 300ms 300ms ease-in-out;
+  transition: transform 300ms 300ms ease-in-out, -webkit-transform 300ms 300ms ease-in-out;
+}
+
+.plat:hover .plat__icon--animationTranslate {
+  width: 66.8px;
+  min-width: 66.8px;
+}
+
+.plat:hover .plat__icon--animationRotate {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
 }
 
 /* BEM for button */
@@ -601,19 +626,17 @@ h1, .footer > h2 {
 }
 
 .jaime > .far.fa-heart {
-  opacity: 1;
   position: absolute;
-  z-index: 1;
+  z-index: 3;
 }
 
 .jaime__voile {
-  opacity: 0;
   width: 24px;
   height: 24px;
   background-color: #f7f7f7;
   position: absolute;
   bottom: 4px;
-  z-index: 2;
+  z-index: 1;
 }
 
 .jaime__voile--background {
@@ -636,43 +659,119 @@ h1, .footer > h2 {
   position: absolute;
   bottom: -2px;
   right: 0;
-  z-index: 3;
+  z-index: 2;
 }
 
 .jaime__vague > div {
   width: 16%;
   height: 25%;
-  background-color: #fff;
+  background-color: #f7f7f7;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
+.jaime__vague--background > div {
+  background-color: #fff;
+}
+
 .jaime:hover > .far.fa-heart {
-  opacity: 0;
+  -webkit-animation: heart-contour 1000ms 500ms forwards;
+          animation: heart-contour 1000ms 500ms forwards;
 }
 
 .jaime:hover > .fas.fa-heart {
-  opacity: 1;
+  -webkit-animation: heart-contain0 200ms 245ms forwards;
+          animation: heart-contain0 200ms 245ms forwards;
 }
 
 .jaime:hover > .jaime__voile {
-  opacity: 1;
-  -webkit-transform: translateY(-27px);
-          transform: translateY(-27px);
-  -webkit-transition: -webkit-transform 4s;
-  transition: -webkit-transform 4s;
-  transition: transform 4s;
-  transition: transform 4s, -webkit-transform 4s;
+  -webkit-animation: heart-contain1 2000ms forwards;
+          animation: heart-contain1 2000ms forwards;
 }
 
 .jaime:hover > .jaime__vague {
-  opacity: 1;
-  -webkit-transform: translate(48px, -27px);
-          transform: translate(48px, -27px);
-  -webkit-transition: -webkit-transform 3s;
-  transition: -webkit-transform 3s;
-  transition: transform 3s;
-  transition: transform 3s, -webkit-transform 3s;
+  -webkit-animation: heart-contain2 1500ms forwards;
+          animation: heart-contain2 1500ms forwards;
+}
+
+@-webkit-keyframes heart-contour {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes heart-contour {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes heart-contain0 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes heart-contain0 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes heart-contain1 {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-27px);
+            transform: translateY(-27px);
+  }
+}
+
+@keyframes heart-contain1 {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-27px);
+            transform: translateY(-27px);
+  }
+}
+
+@-webkit-keyframes heart-contain2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(50px, -27px);
+            transform: translate(50px, -27px);
+  }
+}
+
+@keyframes heart-contain2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(50px, -27px);
+            transform: translate(50px, -27px);
+  }
 }
 
 /* Pages for css specific blocks code in several pages (specific rules in a page) */
