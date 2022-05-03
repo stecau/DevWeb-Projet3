@@ -62,7 +62,30 @@ $footer-responsive: (
 /* resto-fig(link) responsive variables */
 $fig-responsive: (
     tablette: 48%,
-    desktop:24%
+    desktop: 24%
+);
+
+/* illustration menu responsive variables */
+$illustration-responsive: (
+    tablette: 25%,
+    desktop: 33%
+);
+
+/* illustration menu variables */
+$illustration: (
+    left: (
+        padding: 40px 20px 40px 5px
+    ),
+    right: (
+        padding: 47.5px 5px 32.5px 20px
+    )
+);
+
+/* menu animation variables */
+$menu-anim-tempo: (
+    1: 450ms,
+    2: 900ms,
+    3: 1350ms
 );
 
 /* ========================================================================== */

@@ -1,26 +1,109 @@
-.menu{
-    @include flex-display(column, flex-start, flex-start, nowrap, no-adjust);
+.container{
+    @include flex-display(row, space-between, space-between, nowrap, no-adjust);
     padding: 10px 15px;
     background-color: lighten($color-quaternary, 50%);
-    &-section{
-        margin-bottom: 5px;
-        & > h2{
-            margin: 0;
-            padding: 35px 5px 17px 5px;
-            font-size: 100%;
-            font-weight: 100;
-            text-transform: uppercase;            
-        }
-        & .souligne{
-            text-decoration: underline;
-            text-decoration-color: $color-tertiary;
-            text-decoration-thickness: 3px;
-            text-underline-offset: 7px;
-
-
+    @each $key, $values in $illustration{
+        & > .illustration-#{$key}{
+            display: none;
+            @each $subkey, $subvalue in $illustration-responsive{
+                @include responsive($subkey){
+                    box-sizing: border-box;
+                    @include flex-display(row, center, flex-start, nowrap, no-adjust);
+                    width: $subvalue;
+                    padding: map-get($values, padding);
+                    animation: insertion-#{$key} 2.4s cubic-bezier(.4,.05,.6,.95);
+                }
+            }
+            & > img{
+                max-width: 100%;
+                max-height: 900px;
+                object-fit: cover; /* keep image proportion and adjust with image area */
+                filter: drop-shadow(7px 7px 7px $color-shadow);
+            }
         }
     }
-    &-fieldset{
-        @include flex-display(column, flex-start, flex-start, nowrap, no-adjust)
+}
+
+@each $key in map-keys($illustration) {
+    @keyframes insertion-#{$key} {
+        0% {
+            @if ($key == left) {
+                transform: translateX(-200px);
+            } @else {
+                transform: translateX(200px);
+            }
+            opacity: 0;
+        }  
+        100% {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+}
+
+.menu{
+    @include flex-display(column, flex-start, flex-start, nowrap, adjust);
+    @each $key, $value in $illustration-responsive{
+        @include responsive($key){
+            width: 100% - (2 * $value);
+        }
+    }
+    // padding: 10px 15px;
+    // background-color: lighten($color-quaternary, 50%);
+    @each $key, $value in $menu-anim-tempo{
+        &-section#{$key}{
+            margin-bottom: 5px;
+            & > h2{
+                margin: 0;
+                padding: 35px 5px 17px 5px;
+                font-size: 100%;
+                font-weight: 100;
+                text-transform: uppercase;            
+            }
+            & .souligne{
+                text-decoration: underline;
+                text-decoration-color: $color-tertiary;
+                text-decoration-thickness: 3px;
+                text-underline-offset: 7px;
+
+
+            }
+            animation: section-anim#{$key} 1.5s ($value - 450ms) cubic-bezier(.4,.05,.6,.95) backwards;
+        }
+    }
+    @each $key, $value in $menu-anim-tempo{
+        &-fieldset#{$key}{
+            @include flex-display(column, flex-start, flex-start, nowrap, no-adjust);
+            animation: fieldset-anim#{$key} 1.05s $value cubic-bezier(.15,.4,.5,.5) backwards;
+        }
+    }
+}
+
+@each $key, $value in $menu-anim-tempo{
+    @keyframes section-anim#{$key} {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        25% {
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+@each $key, $value in $menu-anim-tempo{
+    @keyframes fieldset-anim#{$key} {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }

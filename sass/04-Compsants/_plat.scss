@@ -60,4 +60,14 @@
             transform: rotate(0);
         }
     }
+    // animation: plat-anim 1.05s 450ms cubic-bezier(.15,.4,.5,.5) backwards;
+}
+
+@keyframes plat-anim {
+    0% {
+        transform: translateY(30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
