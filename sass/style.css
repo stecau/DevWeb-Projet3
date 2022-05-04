@@ -847,7 +847,7 @@ h1, .footer > h2 {
 /* Pages for css specific blocks code in several pages (specific rules in a page) */
 /* 'Accueil' page css generation */
 .loading-spinner {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
@@ -1067,6 +1067,7 @@ h1, .footer > h2 {
   }
   100% {
     opacity: 0;
+    z-index: -3;
   }
 }
 
@@ -1076,6 +1077,7 @@ h1, .footer > h2 {
   }
   100% {
     opacity: 0;
+    z-index: -3;
   }
 }
 
