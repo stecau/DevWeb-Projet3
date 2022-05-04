@@ -1,3 +1,120 @@
+.loading-spinner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    @include flex-display(row, flex-start, flex-start, nowrap, no-adjust);
+    & > div {
+        background-color: rgba(255, 255, 255, 0.95);
+        @each $index in (1, 17) {
+            &:nth-child(#{$index}){
+                width: 31vw;
+                @if ( $index == 1 ) {
+                    animation: side-move-left 1s 1.78s cubic-bezier(.8,.05,.55,.95) both;
+                } @else {
+                    animation: side-move-right 1s 1.72s cubic-bezier(.8,.05,.55,.95) both;
+                }
+            }
+        }
+        @each $index in (9) {
+            &:nth-child(#{$index}){
+                width: 34vw;
+                animation: side-move-left 1s 1.72s cubic-bezier(.8,.05,.55,.95) both;
+            }
+        }
+        @each $index in (2, 4, 6, 8, 10, 12, 14, 16) {
+            &:nth-child(#{$index}){
+                width: 0.2vw;
+                @if ( index((2, 4, 6, 8), $index) ) {
+                    animation: hands-down 2s cubic-bezier(.35,.35,.83,.67) both;
+                } @else {
+                    animation: hands-down 2s 50ms cubic-bezier(0.83, 0.67, 0.35, 0.35) both;
+                }
+            }
+        }
+        @each $index in (3, 5, 7, 11, 13, 15) {
+            &:nth-child(#{$index}){
+                width: 0.4vw;
+                @if ( $index == 3 ) {
+                    animation: side-move-right 1s 1.82s cubic-bezier(.8,.05,.55,.95) both;
+                }
+                @if ( $index == 5 ) {
+                    animation: side-move-right 1s 1.86s cubic-bezier(.8,.05,.55,.95) both;
+                }
+                @if ( $index == 7 ) {
+                    animation: side-move-right 1s 1.9s cubic-bezier(.8,.05,.55,.95) both;
+                } 
+                @if ( $index == 11 ) {
+                    animation: side-move-left 1s 1.76s cubic-bezier(.8,.05,.55,.95) both;
+                }
+                @if ( $index == 13 ) {
+                    animation: side-move-left 1s 1.8s cubic-bezier(.8,.05,.55,.95) both;
+                }
+                @if ( $index == 15 ) {
+                    animation: side-move-left 1s 1.84s cubic-bezier(.8,.05,.55,.95) both;
+                }
+            }
+        }
+        height: 100vh;
+    }
+    & > .left_hand {
+        display: block;
+        position: absolute;
+        top: -33px;
+        left: 20.4%;
+        z-index: 1;
+        animation: hands-down 2s cubic-bezier(.35,.35,.83,.67) both;
+    }
+    & > .right_hand {
+        display: block;
+        position: absolute;
+        top: -33px;
+        right: 20.4%;
+        z-index: 1;
+        animation: hands-down 2s 50ms cubic-bezier(0.83, 0.67, 0.35, 0.35) both;
+    }
+    animation: hide-all 100ms 2.9s both;
+}
+
+@keyframes hands-down {
+    0% {
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(100vh);
+    }
+}
+@keyframes side-move-left {
+    0% {
+        transform-origin: bottom right;
+        transform: translateY(0) rotate(0);
+    }
+    100%{
+        transform: translateY(100vh) rotate(-60deg);
+    }
+}
+
+@keyframes side-move-right {
+    0% {
+        transform-origin: bottom left;
+        transform: translateY(0) rotate(0);
+    }
+    100%{
+        transform: translateY(100vh) rotate(60deg);
+    }
+}
+
+@keyframes hide-all {
+    0% {
+        opacity: 0.95;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
 .city-section{
     @include flex-display(column, center, center, nowrap, no-adjust);
     background-color: $color-city-section;
