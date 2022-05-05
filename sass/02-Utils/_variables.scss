@@ -160,7 +160,11 @@ $menu-anim-tempo: (
         justify-content: $main-dir;
     }
     @if ( ($secondary-dir != flex-start) and $wrap == nowrap ){
-        align-items: $secondary-dir;
+        @if ($secondary-dir == space-between) {
+            align-content: $secondary-dir;
+        } @else {
+            align-items: $secondary-dir;
+        }
     }
     @if ( ($secondary-dir != flex-start) and $wrap == wrap ){
         align-content: $secondary-dir;
