@@ -156,7 +156,7 @@
         animation: hands-down 2s 50ms cubic-bezier(0.83, 0.67, 0.35, 0.35) both;
                 //    hands-shake 100ms 50ms alternate infinite both;
     }
-    // animation: hide-all 100ms 2.9s forwards;
+    animation: hide-all 100ms 2.9s forwards;
 }
 
 @keyframes hands-down {
