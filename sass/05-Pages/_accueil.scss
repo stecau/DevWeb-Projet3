@@ -20,10 +20,10 @@
                         right: -0.2vw;
                         width: 0.2vw;
                         height: 100vh;
-                        background-size: 0.2vw 2vh,
-                                         0.2vw 2vh;
-                        background-image: linear-gradient(80deg, rgba(255, 255, 255, 0.98) 0.2vh, transparent 0.2vh),
-                                          linear-gradient(100deg, rgba(255, 255, 255, 0.98) 0.2vh, transparent 0.2vh);
+                        background-size: 0.22vw 1.44vw,
+                                         0.22vw 1.44vw;
+                        background-image: linear-gradient(80deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw),
+                                          linear-gradient(100deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw);
                     }
                     animation: side-move-left 1s 1.78s cubic-bezier(.8,.05,.55,.95) both;
                 } @else {
@@ -34,11 +34,11 @@
                         left: -0.2vw;
                         width: 0.2vw;
                         height: 100vh;
-                        background-position-y: -1vh;
-                        background-size: 0.2vw 2vh,
-                                         0.2vw 2vh;
-                        background-image: linear-gradient(260deg, rgba(255, 255, 255, 0.98) 0.2vh, transparent 0.2vh), 
-                                          linear-gradient(280deg, rgba(255, 255, 255, 0.98) 0.2vh, transparent 0.2vh);
+                        background-position-y: -0.72vw;
+                        background-size: 0.2vw 1.44vw,
+                                         0.2vw 1.44vw;
+                        background-image: linear-gradient(260deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw), 
+                                          linear-gradient(280deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw);
                     }
                     animation: side-move-right 1s 1.72s cubic-bezier(.8,.05,.55,.95) both;
                 }
@@ -55,11 +55,11 @@
                     left: -0.2vw;
                     width: 0.2vw;
                     height: 100vh;
-                    background-position-y: -1vh;
-                    background-size: 0.2vw 2vh,
-                                     0.2vw 2vh;
-                    background-image: linear-gradient(260deg, rgba(255, 255, 255, 0.98) 0.2vh, transparent 0.2vh), 
-                                      linear-gradient(280deg, rgba(255, 255, 255, 0.98) 0.2vh, transparent 0.2vh);
+                    background-position-y: -0.72vw;
+                    background-size: 0.2vw 1.44vw,
+                                     0.2vw 1.44vw;
+                    background-image: linear-gradient(260deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw), 
+                                      linear-gradient(280deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw);
                 }
                 &::after {
                     content: "";
@@ -68,17 +68,16 @@
                     right: -0.2vw;
                     width: 0.2vw;
                     height: 100vh;
-                    background-size: 0.2vw 2vh,
-                                     0.2vw 2vh;
-                    background-image: linear-gradient(80deg, rgba(255, 255, 255, 0.98) 0.2vh, transparent 0.2vh), 
-                                      linear-gradient(100deg, rgba(255, 255, 255, 0.98) 0.2vh, transparent 0.2vh);
+                    background-size: 0.22vw 1.44vw,
+                                     0.22vw 1.44vw;
+                    background-image: linear-gradient(80deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw), 
+                                      linear-gradient(100deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw);
                 }
             }
         }
         @each $index in (2, 4, 6, 8, 10, 12, 14, 16) {
             &:nth-child(#{$index}){
-                width: 0.2vw;
-                background-color: transparent;
+                width: 0.35vw;
                 @if ( index((2, 4, 6, 8), $index) ) {
                     animation: hands-down 2s cubic-bezier(.35,.35,.83,.67) both;
                 } @else {
@@ -88,7 +87,7 @@
         }
         @each $index in (3, 5, 7, 11, 13, 15) {
             &:nth-child(#{$index}){
-                width: 0.4vw;
+                width: 0.2vw;
                 @if ( $index == 3 ) {
                     animation: side-move-right 1s 1.82s cubic-bezier(.8,.05,.55,.95) both;
                 }
@@ -114,11 +113,11 @@
                     left: -0.2vw;
                     width: 0.2vw;
                     height: 100vh;
-                    background-position-y: -1vh;
-                    background-size: 0.2vw 2vh,
-                                     0.2vw 2vh;
-                    background-image: linear-gradient(260deg, rgba(255, 255, 255, 0.98) 0.2vh, transparent 0.2vh), 
-                                      linear-gradient(280deg, rgba(255, 255, 255, 0.98) 0.2vh, transparent 0.2vh);
+                    background-position-y: -0.72vw;
+                    background-size: 0.2vw 1.44vw,
+                                     0.2vw 1.44vw;
+                    background-image: linear-gradient(260deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw), 
+                                      linear-gradient(280deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw);
                 }
                 &::after {
                     content: "";
@@ -127,10 +126,10 @@
                     right: -0.2vw;
                     width: 0.2vw;
                     height: 100vh;
-                    background-size: 0.2vw 2vh,
-                                     0.2vw 2vh;
-                    background-image: linear-gradient(80deg, rgba(255, 255, 255, 0.98) 0.2vh, transparent 0.2vh), 
-                                      linear-gradient(100deg, rgba(255, 255, 255, 0.98) 0.2vh, transparent 0.2vh);
+                    background-size: 0.22vw 1.44vw,
+                                     0.22vw 1.44vw;
+                    background-image: linear-gradient(80deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw), 
+                                      linear-gradient(100deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw);
                 }
             }
         }
@@ -155,8 +154,9 @@
         right: 20.4%;
         z-index: 1;
         animation: hands-down 2s 50ms cubic-bezier(0.83, 0.67, 0.35, 0.35) both;
+                //    hands-shake 100ms 50ms alternate infinite both;
     }
-    animation: hide-all 100ms 2.9s forwards;
+    // animation: hide-all 100ms 2.9s forwards;
 }
 
 @keyframes hands-down {
@@ -167,6 +167,16 @@
         transform: translateY(100vh);
     }
 }
+
+@keyframes hands-shake {
+    0% {
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(0.2vw);
+    }
+}
+
 @keyframes side-move-left {
     0% {
         transform-origin: bottom right;
