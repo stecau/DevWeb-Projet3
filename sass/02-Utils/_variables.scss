@@ -11,6 +11,7 @@ $color-form: #EAEAEA;
 $color-city-section: #F6F6F6;
 $color-shadow: #CECECE;
 $color-footer: #353535;
+$color-loading-spinner: rgba(255, 255, 255, 0.98);
 $color-texte-primary: #000;
 $color-texte-secondary: #fff;
 
@@ -88,6 +89,119 @@ $menu-anim-tempo: (
     3: 1350ms
 );
 
+// Variables for Loading Spinner
+$loading-spinner: (
+    animation: hide-all 100ms 2.9s forwards,
+    div: (
+        bg-color: $color-loading-spinner,
+        height: 100vh,
+        nth-child: (
+            1: ( // div #1
+                width: 31vw,
+                before: no,
+                after: yes,
+                animation: side-move-left 1s 1.78s cubic-bezier(.8,.05,.55,.95) both
+            ),
+            2: ( // div #2
+                width: 0.35vw,
+                before: no,
+                after: no,
+                animation: hands-down 2s cubic-bezier(.35,.35,.83,.67) both
+            ),
+            3: ( // div #3
+                width: 0.2vw,
+                before: yes,
+                after: yes,
+                animation: side-move-right 1s 1.82s cubic-bezier(.8,.05,.55,.95) both
+            ),
+            4: ( // div #4
+                width: 0.35vw,
+                before: no,
+                after: no,
+                animation: hands-down 2s cubic-bezier(.35,.35,.83,.67) both
+            ),
+            5: ( // div #5
+                width: 0.2vw,
+                before: yes,
+                after: yes,
+                animation: side-move-right 1s 1.86s cubic-bezier(.8,.05,.55,.95) both
+            ),
+            6: ( // div #6
+                width: 0.35vw,
+                before: no,
+                after: no,
+                animation: hands-down 2s cubic-bezier(.35,.35,.83,.67) both
+            ),
+            7: ( // div #7
+                width: 0.2vw,
+                before: yes,
+                after: yes,
+                animation: side-move-right 1s 1.9s cubic-bezier(.8,.05,.55,.95) both
+            ),
+            8: ( // div #8
+                width: 0.35vw,
+                before: no,
+                after: no,
+                animation: hands-down 2s cubic-bezier(.35,.35,.83,.67) both
+            ),
+            9: ( // div #9
+                width: 34vw,
+                before: yes,
+                after: yes,
+                animation: side-move-left 1s 1.72s cubic-bezier(.8,.05,.55,.95) both
+            ),
+            10: ( // div #10
+                width: 0.35vw,
+                before: no,
+                after: no,
+                animation: hands-down 2s 50ms cubic-bezier(0.83, 0.67, 0.35, 0.35) both
+            ),
+            11: ( // div #11
+                width: 0.2vw,
+                before: yes,
+                after: yes,
+                animation: side-move-left 1s 1.76s cubic-bezier(.8,.05,.55,.95) both
+            ),
+            12: ( // div #12
+                width: 0.35vw,
+                before: no,
+                after: no,
+                animation: hands-down 2s 50ms cubic-bezier(0.83, 0.67, 0.35, 0.35) both
+            ),
+            13: ( // div #13
+                width: 0.2vw,
+                before: yes,
+                after: yes,
+                animation: side-move-left 1s 1.8s cubic-bezier(.8,.05,.55,.95) both
+            ),
+            14: ( // div #14
+                width: 0.35vw,
+                before: no,
+                after: no,
+                animation: hands-down 2s 50ms cubic-bezier(0.83, 0.67, 0.35, 0.35) both
+            ),
+            15: ( // div #15
+                width: 0.2vw,
+                before: yes,
+                after: yes,
+                animation: side-move-left 1s 1.84s cubic-bezier(.8,.05,.55,.95) both
+            ),
+            16: ( // div #16
+                width: 0.35vw,
+                before: no,
+                after: no,
+                animation: hands-down 2s 50ms cubic-bezier(0.83, 0.67, 0.35, 0.35) both
+            ),
+            17: ( // div #17
+                width: 31vw,
+                before: yes,
+                after: no,
+                animation: side-move-right 1s 1.72s cubic-bezier(.8,.05,.55,.95) both
+            )
+        )
+    )
+);
+
 /* ========================================================================== */
 /* ===                              Functions                             === */
 /* ========================================================================== */
@@ -108,6 +222,34 @@ $menu-anim-tempo: (
         @return block;
     }@else{
         @return none;
+    }
+}
+
+// Function in order to remove index in list
+@function remove($list, $index) {
+    $new-list: ();
+    @each $value in $list {
+        @if ( index($list, $value) != $index ) {
+            $new-list: append($new-list, $value);
+        }
+    }
+    @return $new-list;
+}
+
+// Function to get data for BEM
+@function get-value($list-keys, $my-map) {
+    @each $my-key in $list-keys {
+        @if ( index(map-keys($my-map), $my-key) != null ) {
+            $my-new-map: map-get($my-map, $my-key);
+            @if ( ( $my-key != nth($list-keys, -1) ) and ( index(map-keys($my-map), $my-key) != null ) ) {
+                $my-new-list: remove($list-keys, 1);
+                @return get-value($my-new-list, $my-new-map);
+            } @else {
+                @return map-get($my-map, $my-key);
+            }
+        } @else {
+            @error "Function 'get-value' : clé (#{$my-key}) de la liste [#{$list-keys}] non présente dans le map [#{$my-map}] ";
+        }
     }
 }
 
@@ -178,6 +320,32 @@ $menu-anim-tempo: (
     }
 }
 
+/* Mixin for position of block */
+@mixin block-position($position: absolute, $top: none, $right: none, $bottom: none, $left: none, $zindex: none, $width: none, $height: none){
+    position: $position;
+    @if ( $top != none ){
+        top: $top;
+    }
+    @if ( $left != none ){
+        left: $left;
+    }
+    @if ( $bottom != none ){
+        bottom: $bottom;
+    }
+    @if ( $right != none ){
+        right: $right;
+    }
+    @if ( $zindex != none ){
+        z-index: $zindex;
+    }
+    @if ( $width != none ){
+        width: $width;
+    }
+    @if ( $height != none ){
+        height: $height;
+    }
+}
+
 /* Mixin for Article + Aside with H2 */
 @mixin article-aside-h2-mixin(){
     @include flex-display(column, flex-start, flex-start, nowrap);
@@ -185,4 +353,59 @@ $menu-anim-tempo: (
         margin: 0;
         padding: 50px 0 20px 20px; 
     }
+}
+
+/* Mixin for Loading spinner in order to style the rigth or the left div border */
+@mixin div-border($side){
+    content: "";
+    position: absolute;
+    top: 0;
+    @if ($side == right) {
+        right: -0.2vw;
+        background-size: 0.22vw 1.44vw,
+                         0.22vw 1.44vw;
+        background-image: linear-gradient(80deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw),
+                          linear-gradient(100deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw);
+    }
+    @if ($side == left) {
+        left: -0.2vw;
+        background-position-y: -0.72vw;
+        background-size: 0.2vw 1.44vw,
+                         0.2vw 1.44vw;
+        background-image: linear-gradient(260deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw), 
+                          linear-gradient(280deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw);
+    }
+    width: 0.2vw;
+    height: 100vh;       
+}
+
+/* Mixin for Loading spinner in order to style the rigth or the left div container for hand */
+@mixin div-hand($side) {
+    background-color: transparent;
+    position: absolute;
+    z-index: 1;
+    top: -3.36734693877551vw;
+    @if ($side == left) {
+        left: 20.4%;
+        animation: hands-down 2s cubic-bezier(.35,.35,.83,.67) both;
+        & > img{
+            @include img-hand(0ms)
+        }
+        
+    }
+    @if ($side == right) {
+        right: 20.4%;
+        animation: hands-down 2s 50ms cubic-bezier(0.83, 0.67, 0.35, 0.35) both;
+        & > img{
+            @include img-hand(50ms)
+        }
+    }
+}
+
+/* Mixin for Loading spinner in order to animate the rigth or the left  hand img */
+@mixin img-hand($delay) {
+    display: block;
+    width: 19.489795918367347vw;
+    filter: drop-shadow(0.7vw 0.7vw 0.7vw $color-shadow);
+    animation: hands-shake 10ms $delay alternate infinite both;
 }
