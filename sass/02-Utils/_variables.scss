@@ -2,19 +2,21 @@
 /* ===                              Variables                             === */
 /* ========================================================================== */
 /* Color variables */
-$color-primary: #9356DC;
-$color-secondary: #FF79DA;
-$color-tertiary: #99E2D0;
-$color-quaternary: #777777;
-$color-card: #fff;
-$color-form: #EAEAEA;
-$color-city-section: #F6F6F6;
-$color-shadow: #CECECE;
-$color-footer: #353535;
-$color-loading-spinner: rgba(255, 255, 255, 0.98);
-$color-texte-primary: #000;
-$color-texte-secondary: #fff;
-
+    /* Background or border or icon font */
+$color-primary: #9356DC; // Main color for button, heart and disk with number in 'fonctionnement'
+$color-secondary: #FF79DA; // Second color for gradient in button and heart
+$color-tertiary: #99E2D0; // Color for title underline in 'menu' and 'new' card
+$color-quaternary: #777777; // Color for icon in 'fonctionnement'
+$color-card: scale-color($color-quaternary, $lightness: +100%); // Color for 'resto' card in 'acceuil' and 'plat' in 'resto menu' [white : #FFFFFF]
+$color-form: scale-color($color-quaternary, $lightness: +84.5%); // Color for 'formulary' in 'accueil' [color = #EAEAEA]
+$color-city-section: scale-color($color-quaternary, $lightness: +93.5%); // Color for 'city section' in 'accueil' [color = #F6F6F6]
+$color-footer: scale-color($color-quaternary, $lightness: -55.5%); // Color for 'footer' [color = #353535]
+$color-loading-spinner: scale-color($color-quaternary, $lightness: +100%, $alpha: -2%);; // Color for loading spinner [color = rgba(255, 255, 255, 0.998)]
+    /* Shadow */
+$color-shadow: scale-color($color-quaternary, $lightness: +64%); // Color for shadows [color = #CECECE]
+    /* Font color */
+$color-texte-primary: #000000;
+$color-texte-secondary: #FFFFFF;
 
 /* Size and border definition */
 $img-header-size: 29px;
@@ -201,211 +203,3 @@ $loading-spinner: (
         )
     )
 );
-
-/* ========================================================================== */
-/* ===                              Functions                             === */
-/* ========================================================================== */
-
-/* Function in order to get breaking point in founction of the type of data */
-@function brkpt($type){
-    @if ( ($type == icon) or ($type == desktop) ){
-        @return map-get($breakpoints, desktop);
-    }@else{ /* Texte or mobile */
-        @return map-get($breakpoints, mobile);
-    }
-}
-
-/* Function in order to get the display style in founction of the type of data and the screen width */
-@function nav-display-type($type, $width){
-    @if ( ( ( $width >= brkpt($type) ) and ( $type == texte ) ) or 
-    ( ( $width < brkpt($type) ) and ( $type == icon ) ) ){
-        @return block;
-    }@else{
-        @return none;
-    }
-}
-
-// Function in order to remove index in list
-@function remove($list, $index) {
-    $new-list: ();
-    @each $value in $list {
-        @if ( index($list, $value) != $index ) {
-            $new-list: append($new-list, $value);
-        }
-    }
-    @return $new-list;
-}
-
-// Function to get data for BEM
-@function get-value($list-keys, $my-map) {
-    @each $my-key in $list-keys {
-        @if ( index(map-keys($my-map), $my-key) != null ) {
-            $my-new-map: map-get($my-map, $my-key);
-            @if ( ( $my-key != nth($list-keys, -1) ) and ( index(map-keys($my-map), $my-key) != null ) ) {
-                $my-new-list: remove($list-keys, 1);
-                @return get-value($my-new-list, $my-new-map);
-            } @else {
-                @return map-get($my-map, $my-key);
-            }
-        } @else {
-            @error "Function 'get-value' : clé (#{$my-key}) de la liste [#{$list-keys}] non présente dans le map [#{$my-map}] ";
-        }
-    }
-}
-
-/* ========================================================================== */
-/* ===                               Mixins                               === */
-/* ========================================================================== */
-/* Mixins for media queries */
-    /* For Header */
-@mixin mobile-except($type){
-    @if ($type == texte){
-        @media screen and (min-width: brkpt($type)){
-            @content;
-        }
-    }
-    @if ($type == icon){
-        @media screen and (min-width: brkpt($type)){
-            @content;
-        }
-    }
-}
-    /* For Footer and resto-container */
-@mixin responsive($screen-format){
-    @media screen and ( min-width: brkpt(map-get($responsive, $screen-format)) ){
-        @content;
-    }
-}
-
-/* Mixin for link in the nav CSS style */
-@mixin nav-link-mixin($type){
-    font-size: $icon-nav-size;
-    margin-top: ($img-header-size - $icon-nav-size) / 2 ;
-    @if ($type == icon){
-        margin-right: ($img-header-size - $icon-nav-size) / 2 ;
-    }
-    &--display{
-        display: map-get($type-nav-display, $type);
-        @include mobile-except($type){
-            display: nav-display-type($type, brkpt($type));
-        }
-    }
-}
-
-/* Mixin for Flex display */
-@mixin flex-display($direction: row, $main-dir: center, $secondary-dir: center, $wrap: wrap, $adjust: adjust){
-    display: flex;
-    @if ( $direction != row ){
-        flex-direction: $direction;
-    }
-    @if ( $main-dir != flex-start ){
-        justify-content: $main-dir;
-    }
-    @if ( ($secondary-dir != flex-start) and $wrap == nowrap ){
-        @if ($secondary-dir == space-between) {
-            align-content: $secondary-dir;
-        } @else {
-            align-items: $secondary-dir;
-        }
-    }
-    @if ( ($secondary-dir != flex-start) and $wrap == wrap ){
-        align-content: $secondary-dir;
-    }
-    @if ( $wrap != nowrap ){
-        flex-wrap: $wrap;
-    }
-    @if ( $adjust == adjust ){
-        margin: auto;
-        width: 100%;
-    }
-}
-
-/* Mixin for position of block */
-@mixin block-position($position: absolute, $top: none, $right: none, $bottom: none, $left: none, $zindex: none, $width: none, $height: none){
-    position: $position;
-    @if ( $top != none ){
-        top: $top;
-    }
-    @if ( $left != none ){
-        left: $left;
-    }
-    @if ( $bottom != none ){
-        bottom: $bottom;
-    }
-    @if ( $right != none ){
-        right: $right;
-    }
-    @if ( $zindex != none ){
-        z-index: $zindex;
-    }
-    @if ( $width != none ){
-        width: $width;
-    }
-    @if ( $height != none ){
-        height: $height;
-    }
-}
-
-/* Mixin for Article + Aside with H2 */
-@mixin article-aside-h2-mixin(){
-    @include flex-display(column, flex-start, flex-start, nowrap);
-    & > h2{
-        margin: 0;
-        padding: 50px 0 20px 20px; 
-    }
-}
-
-/* Mixin for Loading spinner in order to style the rigth or the left div border */
-@mixin div-border($side){
-    content: "";
-    position: absolute;
-    top: 0;
-    @if ($side == right) {
-        right: -0.2vw;
-        background-size: 0.22vw 1.44vw,
-                         0.22vw 1.44vw;
-        background-image: linear-gradient(80deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw),
-                          linear-gradient(100deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw);
-    }
-    @if ($side == left) {
-        left: -0.2vw;
-        background-position-y: -0.72vw;
-        background-size: 0.2vw 1.44vw,
-                         0.2vw 1.44vw;
-        background-image: linear-gradient(260deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw), 
-                          linear-gradient(280deg, rgba(255, 255, 255, 0.98) 0.2vw, transparent 0.2vw);
-    }
-    width: 0.2vw;
-    height: 100vh;       
-}
-
-/* Mixin for Loading spinner in order to style the rigth or the left div container for hand */
-@mixin div-hand($side) {
-    background-color: transparent;
-    position: absolute;
-    z-index: 1;
-    top: -3.36734693877551vw;
-    @if ($side == left) {
-        left: 20.4%;
-        animation: hands-down 2s cubic-bezier(.35,.35,.83,.67) both;
-        & > img{
-            @include img-hand(0ms)
-        }
-        
-    }
-    @if ($side == right) {
-        right: 20.4%;
-        animation: hands-down 2s 50ms cubic-bezier(0.83, 0.67, 0.35, 0.35) both;
-        & > img{
-            @include img-hand(50ms)
-        }
-    }
-}
-
-/* Mixin for Loading spinner in order to animate the rigth or the left  hand img */
-@mixin img-hand($delay) {
-    display: block;
-    width: 19.489795918367347vw;
-    filter: drop-shadow(0.7vw 0.7vw 0.7vw $color-shadow);
-    animation: hands-shake 10ms $delay alternate infinite both;
-}

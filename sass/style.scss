@@ -3,6 +3,8 @@
 
 /* Utils declaration for css (variables, functions, mixins, %placeholders for extensions */
 @import "./02-Utils/variables";
+@import "./02-Utils/functions";
+@import "./02-Utils/mixins";
 
 /* Layouts for css blocks BEM (header, footer, form,...) */
     /* BEM for parent div inside body */
