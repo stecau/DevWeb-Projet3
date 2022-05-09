@@ -1,0 +1,33 @@
+.fonction-list{
+    @include flex-display(column, flex-start, flex-start, nowrap, no-adjust);
+    @include elm-style( (), $fonction-list);
+    @each $key, $value in $responsive{
+        @include responsive($key){
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    & > li{
+        @include elm-style( (li), $fonction-list);
+        @include flex-display(row, flex-start, center, nowrap, no-adjust)
+    }
+    &__number{
+        @include elm-style( (number), $fonction-list);
+        @include block-position(relative, none, none, none, none, 2);
+    }
+    &__icon{
+        @include elm-style( (icon), $fonction-list);
+        @include block-position(relative, none, none, none, none, 2);
+        &--selected{
+            @include elm-style( (icon, selected), $fonction-list);
+        }
+    }
+    &__texte{
+        @include elm-style( (texte), $fonction-list);
+        &--selected{
+            @include elm-style( (texte, selected), $fonction-list);
+        }
+        @include block-position(relative, none, none, none, $left-move * -1, 1);
+    }
+}

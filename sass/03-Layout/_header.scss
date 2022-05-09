@@ -1,0 +1,28 @@
+.header{
+    @include block-position(relative);
+    @include flex-display(row, flex-start, flex-start, nowrap, no-adjust);
+    @include elm-style((), $header);
+    & > img{
+        @include elm-style((img), $header);
+    }
+}
+
+.nav{
+    @include elm-style((nav), $header);
+    &--disable{
+        @include elm-style((nav, disable), $header);
+    }
+    &--enable{
+        @include elm-style((nav, enable), $header);
+    }
+}
+
+.nav-link{
+    @include elm-style((nav-link), $header);
+    &__icon{
+        @include nav-link-mixin(icon)
+    }
+    &__texte{
+        @include nav-link-mixin(texte)
+    }
+}

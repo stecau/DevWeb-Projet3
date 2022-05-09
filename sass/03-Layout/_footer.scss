@@ -1,0 +1,25 @@
+.footer{
+    @include elm-style((), $footer);
+    & > h2{
+        @include elm-style((h2), $footer);
+    }
+    &-list{
+        @include flex-display(row, flex-start, flex-start, wrap, no-adjust);
+        @include elm-style((list), $footer);
+        & > li{
+            @include elm-style((list, li), $footer);
+            @each $key, $value in $footer-responsive{
+                @include responsive($key){
+                    width: $value;
+                }
+            }
+        }
+        &__link{
+            @include elm-style((list, link), $footer);
+            & > i{
+                @include elm-style((list, link, i), $footer);
+            }
+        }
+    }
+}
+

@@ -1,0 +1,16 @@
+.form{
+    @include flex-display();
+    @include elm-style((), $form);
+    &__label{
+        @include flex-display(row, center, center, nowrap, no-adjust);
+        & > i{
+            @include elm-style((label, i), $form);
+        }
+    }
+    &__input{
+        @include elm-style((input), $form);
+        &::placeholder{
+            @include elm-style((input, placeholder), $form);
+        }
+    }
+}

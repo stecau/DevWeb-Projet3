@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ohmyfood - À la française</title>
+    <meta charset="UTF-8">
+    <meta name= "viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name= "author" content="Stéphane CAU">
+    <meta name= "description" content="Grâce à OhMyFood, réservez le menu qui vous convient dans ce restaurant d'exception : À la française, 
+    sélectionnés par nos soins !!!">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="bloc-page"> <!-- div for the page size max 1920px -->
+        <!-- Creation of the header with logo and nav menu -->
+        <header class="header">
+            <img src="images/ohmyfood.png" alt="Logo de ohmyfood" class="header__logo" /> <!-- Logo -->
+            <nav class="nav nav--enable"> <!-- Navigation menu -->
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-arrow-left nav-link__icon nav-link__icon--display"></i>
+                    <span class="nav-link__texte nav-link__texte--display">Accueil</span>
+                </a>
+            </nav>
+        </header>
+
+        <!-- Creation of the 'Menu' section -->
+        <article class="menu-article">
+            <!-- Menu figure -->
+            <figure class="menu-fig">
+                <!-- image -->
+                <img src="images/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Photo À la française" />
+                <!-- legend -->
+                <figcaption class="menu-fig__caption">
+                    <!-- Title for menu -->
+                    <h1>
+                        À la française
+                    </h1>
+                    <!-- Icons -->
+                    <div class="menu-fig__heart jaime">
+                        <i class="far fa-heart"></i>
+                        <i class="fas fa-heart"></i>
+                        <div class="jaime__voile"></div>
+                        <div class="jaime__vague">
+                            <div></div><div></div><div></div><div></div><div></div><div></div>
+                        </div>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <!-- Creation of the 'container' for illustration + menu -->
+            <div class="container">
+                <!-- Creation of 'illustration' for menu -->
+                <div class="illustration-left">
+                    <!-- image -->
+                    <img src="images/fourchette.png" alt="fourchette" />
+                </div>
+                
+                <!-- Creation of the 'formulaire' menu -->
+                <div class="menu">
+                    <!-- Section 1 for Menu - Entrées -->
+                    <section class="menu-section1">
+                        <!-- Title for menu -->
+                        <h2>
+                            <span class="souligne">entr</span>ées
+                        </h2>
+                        <div class="menu-fieldset1">
+                            <!-- 1st Entrées -->
+                            <div class="plat">
+                                <div class="plat__description">
+                                    <h3>
+                                        Tartare de poulpe acidulé
+                                    </h3>
+                                    <p>Aux zestes d'orange</p>
+                                </div>
+                                <p class="plat__prix">25€</p>
+                                <div class="plat__icon--animationTranslate">
+                                    <div class="plat__icon">
+                                        <i class="fas fa-check-circle plat__icon--animationRotate"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 2nd Entrées -->
+                            <div class="plat">
+                                <div class="plat__description">
+                                    <h3>
+                                        Velouté de légumes d'antan
+                                    </h3>
+                                    <p>Carotte, panais, topinambour</p>
+                                </div>
+                                <p class="plat__prix">35€</p>
+                                <div class="plat__icon--animationTranslate">
+                                    <div class="plat__icon">
+                                        <i class="fas fa-check-circle plat__icon--animationRotate"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 3rd Entrées -->
+                            <div class="plat">
+                                <div class="plat__description">
+                                    <h3>
+                                        Soupe à l'oignon
+                                    </h3>
+                                    <p>Revisitée</p>
+                                </div>
+                                <p class="plat__prix">20€</p>
+                                <div class="plat__icon--animationTranslate">
+                                    <div class="plat__icon">
+                                        <i class="fas fa-check-circle plat__icon--animationRotate"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 2 for Menu - Plats -->
+                    <section class="menu-section2">
+                        <!-- Title for menu -->
+                        <h2>
+                            <span class="souligne">plat</span>s
+                        </h2>
+                        <div class="menu-fieldset2">
+                            <!-- 1st Plats -->
+                            <div class="plat">
+                                <div class="plat__description">
+                                    <h3>
+                                        Coquilles Saint-Jacques
+                                    </h3>
+                                    <p>Accompagnées d'une purée de panais</p>
+                                </div>
+                                <p class="plat__prix">40€</p>
+                                <div class="plat__icon--animationTranslate">
+                                    <div class="plat__icon">
+                                        <i class="fas fa-check-circle plat__icon--animationRotate"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 2nd Plats -->
+                            <div class="plat">
+                                <div class="plat__description">
+                                    <h3>
+                                        Magret de canard
+                                    </h3>
+                                    <p>Et parmentier de pommes de terre</p>
+                                </div>
+                                <p class="plat__prix">35€</p>
+                                <div class="plat__icon--animationTranslate">
+                                    <div class="plat__icon">
+                                        <i class="fas fa-check-circle plat__icon--animationRotate"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 3rd Plats -->
+                            <div class="plat">
+                                <div class="plat__description">
+                                    <h3>
+                                        Pigeonneau d’Ille-et-Vilaine
+                                    </h3>
+                                    <p>Sur son lit de gnocchis aux légumes</p>
+                                </div>
+                                <p class="plat__prix">44€</p>
+                                <div class="plat__icon--animationTranslate">
+                                    <div class="plat__icon">
+                                        <i class="fas fa-check-circle plat__icon--animationRotate"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 3 for Menu - desserts -->
+                    <section class="menu-section3">
+                        <!-- Title for menu -->
+                        <h2>
+                            <span class="souligne">dess</span>erts
+                        </h2>
+                        <div class="menu-fieldset3">
+                            <!-- 1st dessert -->
+                            <div class="plat">
+                                <div class="plat__description">
+                                    <h3>
+                                        Pétales de violettes glacés
+                                    </h3>
+                                    <p>Et purée de noisettes</p>
+                                </div>
+                                <p class="plat__prix">18€</p>
+                                <div class="plat__icon--animationTranslate">
+                                    <div class="plat__icon">
+                                        <i class="fas fa-check-circle plat__icon--animationRotate"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 2nd desserts -->
+                            <div class="plat">
+                                <div class="plat__description">
+                                    <h3>
+                                        Fondant au chocolat
+                                    </h3>
+                                    <p>Revisité</p>
+                                </div>
+                                <p class="plat__prix">22€</p>
+                                <div class="plat__icon--animationTranslate">
+                                    <div class="plat__icon">
+                                        <i class="fas fa-check-circle plat__icon--animationRotate"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 3rd desserts -->
+                            <div class="plat">
+                                <div class="plat__description">
+                                    <h3>
+                                        Millefeuille croustillant
+                                    </h3>
+                                    <p>Myrtilles et pâte d’amande</p>
+                                </div>
+                                <p class="plat__prix">23€</p>
+                                <div class="plat__icon--animationTranslate">
+                                    <div class="plat__icon">
+                                        <i class="fas fa-check-circle plat__icon--animationRotate"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Button for form submitting -->
+                    <button type="button" class="button button--commande" id="commande">Commander</button>
+                </div>
+
+                <!-- Creation of 'illustration' for menu -->
+                <div class="illustration-right">
+                    <!-- image -->
+                    <img src="images/couteau.png" alt="couteau" />
+                </div>
+            </div>
+        </article>
+
+        <!-- Creation of the Footer -->
+        <footer class="footer">
+            <h2>ohmyfood</h2>
+            <ul class="footer-list">
+                <li><a class="footer-list__link" href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
+                <li><a class="footer-list__link" href="#"><i class="fas fa-hands-helping"></i>Devenir partenaire</a></li>
+                <li><a class="footer-list__link" href="#">Mentions légales</a></li>
+                <li><a class="footer-list__link" href="mailto:contact@ohmyfood.com?subject=Renseignement(s)&body=Votre&nbsp;message&nbsp;ici">Contact</a></li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+.city-section{
+    @include flex-display(column, center, center, nowrap, no-adjust);
+    background-color: get-value( (city-section, background-color), $accueil-page );
+    & > h1{
+        @include elm-style((city-section, h1), $accueil-page);
+    }
+    & > p{
+        @include elm-style((city-section, p), $accueil-page);
+    }
+    & > a{
+        @include elm-style((city-section, a), $accueil-page);
+    }
+}
+
+.resto-section{
+    @include flex-display(column-reverse, flex-start, flex-start, nowrap, no-adjust)
+}
+
+.resto-aside{
+    @include flex-display(column, flex-start, flex-start, nowrap);
+    @include elm-style((resto-aside), $accueil-page);
+    & > h2{
+        @include elm-style((resto-aside, h2), $accueil-page);
+    }
+}
+
+.resto-article{
+    @include flex-display(column, flex-start, flex-start, nowrap);
+    @include elm-style((resto-article), $accueil-page);
+    & > h2{
+        @include elm-style((resto-article, h2), $accueil-page);
+    }
+}
+
+.resto-container{
+    @include flex-display(row, space-between, space-between, wrap);
+    @include elm-style((resto-container), $accueil-page);
+    & > a{
+        @include elm-style((resto-container, a), $accueil-page);
+        @each $key, $value in $fig-responsive{
+            @include responsive($key){
+                width: $value;
+            }
+        }
+    }
+}

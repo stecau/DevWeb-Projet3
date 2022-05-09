@@ -1,0 +1,80 @@
+.loading-spinner{
+    @include block-position(fixed, 0, 0, 0, 0, 3);
+    @include flex-display(row, flex-start, flex-start, nowrap, no-adjust);
+    & > div {
+        @include block-position(relative);
+        @include elm-style( (div), $loading-spinner);
+        @for $index from 1 to 18 {
+            &:nth-child(#{$index}){
+                width: get-value( (div, nth-child, $index, width), $loading-spinner );
+                @if ( get-value( (div, nth-child, $index, before), $loading-spinner ) == yes ) {
+                    &::before {
+                        @include div-border(left);
+                    }
+                }
+                @if ( get-value( (div, nth-child, $index, after), $loading-spinner ) == yes ) {
+                    &::after {
+                        @include div-border(right);
+                    }
+                }
+                animation: get-value( (div, nth-child, $index, animation), $loading-spinner );
+            }
+        }
+    }
+    & > .left_hand {
+        @include div-hand(left);
+    }
+    & > .right_hand {
+        @include div-hand(right);
+    }
+    animation: get-value( (animation), $loading-spinner );
+}
+
+@keyframes hands-down {
+    0% {
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes hands-shake {
+    0% {
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(0.2vw);
+    }
+}
+
+@keyframes side-move-left {
+    0% {
+        transform-origin: bottom right;
+        transform: translateY(0) rotate(0);
+    }
+    100%{
+        transform: translateY(100vh) rotate(-60deg);
+    }
+}
+
+@keyframes side-move-right {
+    0% {
+        transform-origin: bottom left;
+        transform: translateY(0) rotate(0);
+    }
+    100%{
+        transform: translateY(100vh) rotate(60deg);
+    }
+}
+
+@keyframes hide-all {
+    0% {
+        opacity: 0.98;
+    }
+    100%{
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+}
