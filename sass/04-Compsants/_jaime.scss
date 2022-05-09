@@ -1,48 +1,28 @@
 .jaime{
-    position: relative;
-    overflow: hidden;
+    @include block-position(relative);
+    @include elm-style( (), $jaime);
     & > .fas.fa-heart{
-        opacity: 0;
-        color: transparent;
-        background: linear-gradient(to top, $color-primary, $color-secondary); /* Attention : 'background' first and after 'background-clip: text' */
-        background-clip: text; /* Attention : 'background-clip: text' after background */
-        -webkit-background-clip: text; /* Attention : webkit not written by sass */
+        @include elm-style( (fas_fa-heart), $jaime);
     }
     & > .far.fa-heart{
-        position: absolute;
-        z-index: 3;
+        @include block-position(absolute, none, none, none, none, 3);
     }
     &__voile{
-        width: 24px;
-        height: 24px;
-        background-color: lighten($color-quaternary, 50%);
-        position: absolute;
-        bottom: 4px;
-        z-index: 1;
+        @include elm-style( (voile), $jaime);
+        @include block-position(absolute, none, none, 4px, none, 1);
         &--background{
-            background-color: $color-card;
+            @include elm-style( (voile, background), $jaime);
         }
     }
     &__vague{
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        width: 72px;
-        height: 24px;
-        background-color: transparent;
-        position: absolute;
-        bottom: -2px;
-        right: 0;
-        z-index: 2;
+        @include flex-display(row, flex-end, flex-end, nowrap, no-adjust);
+        @include elm-style( (vague), $jaime);
+        @include block-position(absolute, none, 0, -2px, none, 2);
         & > div{
-            width: 16%;
-            height: 25%;
-            background-color: lighten($color-quaternary, 50%);
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
+            @include elm-style( (vague, div), $jaime);
         }
-        &--background  > div{
-            background-color: $color-card;
+        &--background > div{
+            @include elm-style( (vague, background-div), $jaime);
         }
     }
 

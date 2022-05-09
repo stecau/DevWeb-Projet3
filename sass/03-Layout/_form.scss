@@ -1,21 +1,16 @@
 .form{
-    background-color: $color-form;
     @include flex-display();
-    padding: 15px 0;
-    box-shadow: inset 0px 7px 5px -3px $color-shadow;
+    @include elm-style((), $form);
     &__label{
         @include flex-display(row, center, center, nowrap, no-adjust);
         & > i{
-            padding: 0 23px;
+            @include elm-style((label, i), $form);
         }
     }
     &__input{
-        appearance: none; /* suppress default behaviour */
-        outline: none; /* no border when focus */
-        border: 0;
-        background-color: $color-form;
+        @include elm-style((input), $form);
         &::placeholder{
-            color: $color-texte-primary;
+            @include elm-style((input, placeholder), $form);
         }
     }
 }

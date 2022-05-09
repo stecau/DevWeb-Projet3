@@ -1,5 +1,7 @@
 @charset "UTF-8";
+/* ========================================================================== */
 /* Base for '1st field' for css (police, norms : box-sizing,...) */
+/* Start import */
 /* ========================================================================== */
 /* Déclaration initiale for BOX-SIZING */
 * {
@@ -24,43 +26,89 @@ h1, .footer > h2 {
   font-family: "Roboto", Verdana, sans-serif;
 }
 
+/* End import */
+/* ========================================================================== */
+/* ========================================================================== */
 /* Utils declaration for css (variables, functions, mixins, %placeholders for extensions */
+/* Start import */
 /* ========================================================================== */
 /* ===                              Variables                             === */
+/* ========================================================================== */
+/* Breakpoints variables */
+/* Breakpoints */
+/* format - breakpoints correspondance */
 /* ========================================================================== */
 /* Color variables */
 /* Background or border or icon font */
 /* Shadow */
 /* Font color */
-/* Size and border definition */
-/* Dimension for fonctionnement items */
-/* Display variables */
-/* Breakpoints variables */
-/* format - breakpoints correspondance */
+/* ========================================================================== */
+/* Global Size and Box (margin, padding, ...) definition */
+/* ========================================================================== */
+/* Specific header variables */
+/* Nav Display variables */
+/* ========================================================================== */
+/* Specific 'form' variables */
+/* ========================================================================== */
+/* Specific 'footer' variables */
 /* Footer responsive variables */
+/* ========================================================================== */
+/* Specific 'button' variables */
+/* ========================================================================== */
+/* Specific 'fonctionnement' variables */
+/* Dimension for fonctionnement items */
+/* ========================================================================== */
+/* Specific 'restaurant figure' variables */
 /* resto-fig(link) responsive variables */
+/* ========================================================================== */
+/* Specific 'jaime' variables */
+/* ========================================================================== */
+/* Specific 'new' variables */
+/* ========================================================================== */
+/* Specific 'menu figure' variables */
+/* ========================================================================== */
+/* Specific 'plat' variables */
+/* ========================================================================== */
+/* Specific 'accueil' page variables */
+/* ========================================================================== */
+/* Specific 'menu' page variables */
 /* illustration menu responsive variables */
 /* illustration menu variables */
 /* menu animation variables */
 /* ========================================================================== */
+/* Variables for Loading Spinner */
+/* ========================================================================== */
 /* ===                              Functions                             === */
 /* ========================================================================== */
 /* Function in order to get breaking point in founction of the type of data */
-/* Function in order to get the display style in founction of the type of data and the screen width */
+/* Function in order to get the display style in function of the type of data and the screen width */
+/* Function in order to know if $var is a 'map' or a 'list' */
+/* Function in order to remove index in list */
+/* Function to get data for BEM */
 /* ========================================================================== */
 /* ===                               Mixins                               === */
 /* ========================================================================== */
 /* Mixins for media queries */
 /* For Header */
 /* For Footer and resto-container */
-/* Mixin for link in the nav CSS style */
+/* ========================================================================== */
+/* Global Mixin */
 /* Mixin for Flex display */
 /* Mixin for position of block */
-/* Mixin for Article + Aside with H2 */
+/* Mixin for css style of block from variable generation */
+/* ========================================================================== */
+/* Specific Mixin for nav behaviour */
+/* Mixin for link in the nav CSS style */
+/* ========================================================================== */
+/* Specific Mixin for Loading spinner animation */
 /* Mixin for Loading spinner in order to style the rigth or the left div border */
 /* Mixin for Loading spinner in order to style the rigth or the left div container for hand */
 /* Mixin for Loading spinner in order to animate the rigth or the left  hand img */
+/* End import */
+/* ========================================================================== */
+/* ========================================================================== */
 /* Layouts for css blocks BEM (header, footer, form,...) */
+/* Start import */
 /* BEM for parent div inside body */
 /* ========================================================================== */
 /* Definition of the bloc_page style */
@@ -68,7 +116,7 @@ h1, .footer > h2 {
 #bloc-page {
   max-width: 1920px;
   /* Define max width equal to 1920px */
-  margin: auto;
+  margin: 0 auto;
 }
 
 /* BEM for header */
@@ -81,40 +129,30 @@ h1, .footer > h2 {
 
 .header > img {
   display: block;
-  /* Convertion img in block in order to center itself */
   margin: 23px auto;
-  /* center img with margin auto for left and right and 23px for top and bottom */
   height: 29px;
-  /* Difine height size to get good img size */
 }
 
 .nav {
   position: absolute;
-  /* nav positionning over logo in header */
   top: 23px;
-  /* use of $header-margin variable for positionning nav */
   left: 23px;
-  /* use of $header-margin variable for positionning nav */
 }
 
 .nav--disable {
   display: none;
-  /* nav not displayed in 'accueil' page */
 }
 
 .nav--enable {
   display: block;
-  /* nav displayed in pages except 'accueil' page */
 }
 
 .nav-link {
   text-decoration: none;
-  /* No link default style */
-  color: #000;
+  color: #000000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /* Display with flexbox in order to align icon and texte */
 }
 
 .nav-link__icon {
@@ -150,7 +188,6 @@ h1, .footer > h2 {
 
 /* BEM for formulary */
 .form {
-  background-color: #eaeaea;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -163,6 +200,7 @@ h1, .footer > h2 {
       flex-wrap: wrap;
   margin: auto;
   width: 100%;
+  background-color: #eaeaea;
   padding: 15px 0;
   -webkit-box-shadow: inset 0px 7px 5px -3px #cecece;
           box-shadow: inset 0px 7px 5px -3px #cecece;
@@ -188,9 +226,7 @@ h1, .footer > h2 {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  /* suppress default behaviour */
   outline: none;
-  /* no border when focus */
   border: 0;
   background-color: #eaeaea;
 }
@@ -224,13 +260,13 @@ h1, .footer > h2 {
 }
 
 .footer-list {
-  list-style-type: none;
-  padding-left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 .footer-list > li {
@@ -259,11 +295,15 @@ h1, .footer > h2 {
 }
 
 .footer-list__link > i {
-  padding: 0px 10px 0px 0;
+  padding: 0 10px 0 0;
   font-size: 14px;
 }
 
+/* End import */
+/* ========================================================================== */
+/* ========================================================================== */
 /* Components for css INDEPENDANT blocks BEM (button,...) */
+/* Start import */
 /* BEM for ohmyfood introduction*/
 .fonction-list {
   display: -webkit-box;
@@ -373,7 +413,6 @@ h1, .footer > h2 {
   height: 175px;
   -o-object-fit: cover;
      object-fit: cover;
-  /* keep image proportion and adjust with image area */
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -382,6 +421,7 @@ h1, .footer > h2 {
   background-color: white;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  padding: 0 20px 15px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -391,7 +431,6 @@ h1, .footer > h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 20px 15px 20px;
 }
 
 .resto-fig__description > h3 {
@@ -411,7 +450,6 @@ h1, .footer > h2 {
 
 /* BEM for restaurant menu selection (figure structure) */
 .menu-fig {
-  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -419,6 +457,7 @@ h1, .footer > h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin: 0;
   position: relative;
 }
 
@@ -427,7 +466,6 @@ h1, .footer > h2 {
   max-height: 450px;
   -o-object-fit: cover;
      object-fit: cover;
-  /* keep image proportion and adjust with image area */
 }
 
 .menu-fig > .rogne {
@@ -440,6 +478,7 @@ h1, .footer > h2 {
   border-top-right-radius: 40px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  padding: 20px 20px 0 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -451,7 +490,6 @@ h1, .footer > h2 {
           align-items: center;
   margin: auto;
   width: 100%;
-  padding: 20px 20px 0 20px;
   position: absolute;
   bottom: -10px;
 }
@@ -516,7 +554,7 @@ h1, .footer > h2 {
 
 .plat__description {
   margin: 12px auto 12px 10px;
-  min-width: 0px;
+  min-width: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -562,8 +600,8 @@ h1, .footer > h2 {
 
 .plat__icon--animationTranslate {
   overflow: hidden;
-  width: 0px;
-  min-width: 0px;
+  width: 0;
+  min-width: 0;
   -webkit-transition: all 600ms ease-in-out;
   transition: all 600ms ease-in-out;
 }
@@ -639,19 +677,19 @@ h1, .footer > h2 {
 }
 
 .button::after {
-  content: "";
   position: absolute;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  content: "";
   background: -webkit-gradient(linear, left bottom, left top, from(#a16be0), to(#ff93e1));
   background: linear-gradient(to top, #a16be0, #ff93e1);
   -webkit-box-shadow: 0px 8px 10px 5px #c1c1c1;
           box-shadow: 0px 8px 10px 5px #c1c1c1;
   border-radius: 30px;
   opacity: 0;
-  z-index: -1;
   -webkit-transition: opacity 250ms;
   transition: opacity 250ms;
 }
@@ -685,6 +723,7 @@ h1, .footer > h2 {
 .jaime {
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .jaime > .fas.fa-heart {
@@ -692,11 +731,8 @@ h1, .footer > h2 {
   color: transparent;
   background: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
   background: linear-gradient(to top, #9356DC, #FF79DA);
-  /* Attention : 'background' first and after 'background-clip: text' */
   background-clip: text;
-  /* Attention : 'background-clip: text' after background */
   -webkit-background-clip: text;
-  /* Attention : webkit not written by sass */
 }
 
 .jaime > .far.fa-heart {
@@ -1311,7 +1347,11 @@ h1, .footer > h2 {
   }
 }
 
+/* End import */
+/* ========================================================================== */
+/* ========================================================================== */
 /* Pages for css specific blocks code in several pages (specific rules in a page) */
+/* Start import */
 /* 'Accueil' page css generation */
 .city-section {
   display: -webkit-box;
@@ -1417,7 +1457,6 @@ h1, .footer > h2 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-decoration: none;
-  /* No link default style */
   color: #000;
   width: 100%;
   margin-bottom: 15px;
@@ -1496,7 +1535,6 @@ h1, .footer > h2 {
   max-height: 900px;
   -o-object-fit: cover;
      object-fit: cover;
-  /* keep image proportion and adjust with image area */
   -webkit-filter: drop-shadow(7px 7px 7px #cecece);
           filter: drop-shadow(7px 7px 7px #cecece);
 }
@@ -1544,7 +1582,6 @@ h1, .footer > h2 {
   max-height: 900px;
   -o-object-fit: cover;
      object-fit: cover;
-  /* keep image proportion and adjust with image area */
   -webkit-filter: drop-shadow(7px 7px 7px #cecece);
           filter: drop-shadow(7px 7px 7px #cecece);
 }
@@ -1907,8 +1944,13 @@ h1, .footer > h2 {
   }
 }
 
+/* End import */
+/* ========================================================================== */
+/* ========================================================================== */
 /* Themes for specific css themes (Noel, promo,...) */
 /* No specification */
+/* ========================================================================== */
 /* Vendors for external style like bootstrap or JQuery */
 /* No specification */
+/* ========================================================================== */
 /*# sourceMappingURL=style.css.map */

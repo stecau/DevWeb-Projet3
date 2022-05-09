@@ -2,9 +2,8 @@
     @include block-position(fixed, 0, 0, 0, 0, 3);
     @include flex-display(row, flex-start, flex-start, nowrap, no-adjust);
     & > div {
-        position: relative;
-        background-color: get-value( (div, bg-color), $loading-spinner );
-        height: get-value( (div, height), $loading-spinner );
+        @include block-position(relative);
+        @include elm-style( (div), $loading-spinner);
         @for $index from 1 to 18 {
             &:nth-child(#{$index}){
                 width: get-value( (div, nth-child, $index, width), $loading-spinner );

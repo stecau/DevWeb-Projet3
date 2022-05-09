@@ -1,20 +1,10 @@
 .new{
-    position: absolute;
-    top: 20px;
-    right: 10px;
-    margin: 0;
-    box-sizing: border-box;
-    width: 80px;
-    background-color: $color-tertiary;
-    color: darken($color-tertiary, 40%);
-    padding: 6px;
-    border-radius: 3px;
-    font-size: 90%;
-    text-align: center;
+    @include block-position(absolute, 20px, 10px);
+    @include elm-style( (), $new);
     &--enable{
-        display: block;
+        @include elm-style( (enable), $new);
     }
     &--disable{
-        display: none;
+        @include elm-style( (disable), $new);
     }
 }

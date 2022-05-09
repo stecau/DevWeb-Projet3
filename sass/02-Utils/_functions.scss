@@ -6,12 +6,12 @@
 @function brkpt($type){
     @if ( ($type == icon) or ($type == desktop) ){
         @return map-get($breakpoints, desktop);
-    }@else{ /* Texte or mobile */
+    }@else{ // Texte or mobile
         @return map-get($breakpoints, mobile);
     }
 }
 
-/* Function in order to get the display style in founction of the type of data and the screen width */
+/* Function in order to get the display style in function of the type of data and the screen width */
 @function nav-display-type($type, $width){
     @if ( ( ( $width >= brkpt($type) ) and ( $type == texte ) ) or 
     ( ( $width < brkpt($type) ) and ( $type == icon ) ) ){
@@ -21,7 +21,15 @@
     }
 }
 
-// Function in order to remove index in list
+/* Function in order to know if $var is a 'map' or a 'list' */
+@function is($var, $type){
+    // @error "La valeur est : #{$var}";
+    // @error "Le type est : #{$type}";
+    // @error "Le resultat est : #{(type-of($var) == $type)}";
+    @return type-of($var) == $type;
+}
+
+/* Function in order to remove index in list */
 @function remove($list, $index) {
     $new-list: ();
     @each $value in $list {
@@ -32,16 +40,16 @@
     @return $new-list;
 }
 
-// Function to get data for BEM
+/* Function to get data for BEM */
 @function get-value($list-keys, $my-map) {
     @each $my-key in $list-keys {
         @if ( index(map-keys($my-map), $my-key) != null ) {
             $my-new-map: map-get($my-map, $my-key);
-            @if ( ( $my-key != nth($list-keys, -1) ) and ( index(map-keys($my-map), $my-key) != null ) ) {
+            @if ( $my-key != nth($list-keys, -1) ) {
                 $my-new-list: remove($list-keys, 1);
                 @return get-value($my-new-list, $my-new-map);
             } @else {
-                @return map-get($my-map, $my-key);
+                @return $my-new-map;
             }
         } @else {
             @error "Function 'get-value' : clé (#{$my-key}) de la liste [#{$list-keys}] non présente dans le map [#{$my-map}] ";

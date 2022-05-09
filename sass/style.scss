@@ -1,12 +1,22 @@
+/* ========================================================================== */
 /* Base for '1st field' for css (police, norms : box-sizing,...) */
+    /* Start import */
 @import "./01-base/base";
+    /* End import */
+/* ========================================================================== */
 
+/* ========================================================================== */
 /* Utils declaration for css (variables, functions, mixins, %placeholders for extensions */
+    /* Start import */
 @import "./02-Utils/variables";
 @import "./02-Utils/functions";
 @import "./02-Utils/mixins";
+    /* End import */
+/* ========================================================================== */
 
+/* ========================================================================== */
 /* Layouts for css blocks BEM (header, footer, form,...) */
+    /* Start import */
     /* BEM for parent div inside body */
 @import "./03-Layout/bloc-page";
     /* BEM for header */
@@ -15,8 +25,12 @@
 @import "./03-Layout/form";
     /* BEM for footer */
 @import "./03-Layout/footer";
+    /* End import */
+/* ========================================================================== */
 
+/* ========================================================================== */
 /* Components for css INDEPENDANT blocks BEM (button,...) */
+    /* Start import */
     /* BEM for ohmyfood introduction*/
 @import "./04-Compsants/fonctionnement";
     /* BEM for restaurant preview (figure structure) */
@@ -33,15 +47,23 @@
 @import "./04-Compsants/jaime";
     /* BEM for "Loading Spinner" behaviour */
 @import "./04-Compsants/loading-spinner1";
+    /* End import */
+/* ========================================================================== */
 
+/* ========================================================================== */
 /* Pages for css specific blocks code in several pages (specific rules in a page) */
+    /* Start import */
     /* 'Accueil' page css generation */
 @import "./05-Pages/accueil";
-
     /* 'Menu' pages css generation */
 @import "./05-Pages/menu";
+    /* End import */
+/* ========================================================================== */
 
+/* ========================================================================== */
 /* Themes for specific css themes (Noel, promo,...) */
     /* No specification */
+/* ========================================================================== */
 /* Vendors for external style like bootstrap or JQuery */
     /* No specification */
+/* ========================================================================== */

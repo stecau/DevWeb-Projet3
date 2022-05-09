@@ -3,5 +3,5 @@
 /* Computer screen ; standard style and others with 'viewport' param in html */
 #bloc-page{
     max-width: map-get($breakpoints, max-width); /* Define max width equal to 1920px */
-    margin: auto;
+    margin: 0 auto;
 }

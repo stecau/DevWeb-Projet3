@@ -1,35 +1,25 @@
 .footer{
-    background-color: $color-footer;
-    color: $color-texte-secondary;
-    padding: $header-margin;
+    @include elm-style((), $footer);
     & > h2{
-        font-size: 110%;
-        margin: 0;
+        @include elm-style((h2), $footer);
     }
-}
-
-.footer-list{
-    list-style-type: none;
-    padding-left: 0;
-    @include flex-display(row, flex-start, flex-start, wrap, no-adjust);
-    & > li{
-        box-sizing: border-box;
-        width: 100%;
-        padding: 5px 0;
-        @each $key, $value in $footer-responsive{
-            @include responsive($key){
-                width: $value;
+    &-list{
+        @include flex-display(row, flex-start, flex-start, wrap, no-adjust);
+        @include elm-style((list), $footer);
+        & > li{
+            @include elm-style((list, li), $footer);
+            @each $key, $value in $footer-responsive{
+                @include responsive($key){
+                    width: $value;
+                }
             }
         }
-    }
-    &__link{
-        text-decoration: none;
-        color: $color-texte-secondary;
-        font-size: 100%;
-    }
-    &__link > i{
-        padding: 0px 10px 0px 0;
-        font-size: 14px;
+        &__link{
+            @include elm-style((list, link), $footer);
+            & > i{
+                @include elm-style((list, link, i), $footer);
+            }
+        }
     }
 }
 

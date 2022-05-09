@@ -1,28 +1,19 @@
 .menu-fig{
-    margin: 0;
     @include flex-display(column, flex-start, flex-start, nowrap, no-adjust);
-    position: relative;
+    @include elm-style( (), $menu-fig);
+    @include block-position(relative);
     & > img{
-        width: 100%;
-        max-height: 450px;
-        object-fit: cover; /* keep image proportion and adjust with image area */
+        @include elm-style( (img), $menu-fig);
     }
     & > .rogne{
-        height: calc(100vw * 0.67);
+        @include elm-style( (rogne), $menu-fig);
     }
     &__caption{
-        background-color: lighten($color-quaternary, 50%);
-        border-top-left-radius: 40px;
-        border-top-right-radius: 40px;
-        box-sizing: border-box;
+        @include elm-style( (caption), $menu-fig);
         @include flex-display(row, space-between, center, nowrap, adjust);
-        padding: 20px 20px 0 20px;
-        position: absolute;
-        bottom: -10px;
+        @include block-position(absolute, none, none, -10px);
         & > h1{
-            margin: 0;
-            padding-top: 18px;
-            font-size: 160%; 
+            @include elm-style( (caption, h1), $menu-fig);
         }
         @each $key, $value in $illustration-responsive{
             @include responsive($key){
@@ -31,8 +22,6 @@
         }
     }
     &__heart{
-        margin-right: 20px;
-        margin-top: 18px;
-        font-size: x-large;
+        @include elm-style( (heart), $menu-fig);
     }
 }

@@ -1,29 +1,24 @@
 .header{
-    position: relative;
-    display: flex;
+    @include block-position(relative);
+    @include flex-display(row, flex-start, flex-start, nowrap, no-adjust);
+    @include elm-style((), $header);
     & > img{
-        display: block; /* Convertion img in block in order to center itself */
-        margin: $header-margin auto; /* center img with margin auto for left and right and 23px for top and bottom */
-        height: $img-header-size; /* Difine height size to get good img size */
+        @include elm-style((img), $header);
     }
 }
 
 .nav{
-    position: absolute; /* nav positionning over logo in header */
-    top: $header-margin; /* use of $header-margin variable for positionning nav */
-    left: $header-margin; /* use of $header-margin variable for positionning nav */
+    @include elm-style((nav), $header);
     &--disable{
-        display: none; /* nav not displayed in 'accueil' page */
+        @include elm-style((nav, disable), $header);
     }
     &--enable{
-        display: block; /* nav displayed in pages except 'accueil' page */
+        @include elm-style((nav, enable), $header);
     }
 }
 
 .nav-link{
-    text-decoration: none; /* No link default style */
-    color: #000;
-    display: flex; /* Display with flexbox in order to align icon and texte */
+    @include elm-style((nav-link), $header);
     &__icon{
         @include nav-link-mixin(icon)
     }

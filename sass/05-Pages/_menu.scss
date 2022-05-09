@@ -1,7 +1,6 @@
 .container{
     @include flex-display(row, space-between, space-between, nowrap, no-adjust);
-    padding: 10px 15px;
-    background-color: lighten($color-quaternary, 50%);
+    @include elm-style( (), $container);
     @each $key, $values in $illustration{
         & > .illustration-#{$key}{
             display: none;
@@ -15,10 +14,7 @@
                 }
             }
             & > img{
-                max-width: 100%;
-                max-height: 900px;
-                object-fit: cover; /* keep image proportion and adjust with image area */
-                filter: drop-shadow(7px 7px 7px $color-shadow);
+                @include elm-style( (img), $container);
             }
         }
     }
@@ -48,25 +44,14 @@
             width: 100% - (2 * $value);
         }
     }
-    // padding: 10px 15px;
-    // background-color: lighten($color-quaternary, 50%);
     @each $key, $value in $menu-anim-tempo{
         &-section#{$key}{
-            margin-bottom: 5px;
+            @include elm-style( (), $menu);
             & > h2{
-                margin: 0;
-                padding: 35px 5px 17px 5px;
-                font-size: 100%;
-                font-weight: 100;
-                text-transform: uppercase;            
+                @include elm-style( (h2), $menu);           
             }
             & .souligne{
-                text-decoration: underline;
-                text-decoration-color: $color-tertiary;
-                text-decoration-thickness: 3px;
-                text-underline-offset: 7px;
-
-
+                @include elm-style( (souligne), $menu);
             }
             animation: section-anim#{$key} 1.5s ($value - 450ms) cubic-bezier(.4,.05,.6,.95) backwards;
         }
