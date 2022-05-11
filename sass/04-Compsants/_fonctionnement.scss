@@ -8,26 +8,22 @@
             justify-content: center;
         }
     }
-    & > li{
-        @include elm-style( (li), $fonction-list);
-        @include flex-display(row, flex-start, center, nowrap, no-adjust)
-    }
-    &__number{
-        @include elm-style( (number), $fonction-list);
-        @include block-position(relative, none, none, none, none, 2);
-    }
-    &__icon{
-        @include elm-style( (icon), $fonction-list);
-        @include block-position(relative, none, none, none, none, 2);
-        &--selected{
-            @include elm-style( (icon, selected), $fonction-list);
-        }
-    }
     &__texte{
         @include elm-style( (texte), $fonction-list);
+        @include flex-display(row, flex-start, center, nowrap, no-adjust);
+        @include block-position(relative);
         &--selected{
             @include elm-style( (texte, selected), $fonction-list);
         }
-        @include block-position(relative, none, none, none, $left-move * -1, 1);
+    }
+    &__number{
+        @include elm-style( (number), $fonction-list);
+        @include block-position(absolute, none, none, none, -1 * $left-move, 1);
+    }
+    &__icon{
+        @include elm-style( (icon), $fonction-list);
+        &--selected{
+            @include elm-style( (icon, selected), $fonction-list);
+        }
     }
 }

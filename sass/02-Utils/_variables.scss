@@ -181,7 +181,8 @@ $button: (
         margin: ($big - 10px) auto ($big + 20px) auto,
         padding: $small $big,
         appearance: none,
-        border: 0
+        border: 0,
+        cursor: pointer
     ),
     hover: (
         after: (
@@ -200,53 +201,52 @@ $button: (
 
 /* ========================================================================== */
 /* Specific 'fonctionnement' variables */
+    /* Dimension for fonctionnement items */
+$dim-fonction-items: (
+    number-content: 8.1px,
+    number-pad: $very-small + 3px,
+    icon-margin: $medium + 5px,
+    icon-content: 23.75px,
+    span-width: 176px
+);
+$left-move: map-get($dim-fonction-items, number-content) / 2 +
+            map-get($dim-fonction-items, number-pad);
+$texte-width: map-get($dim-fonction-items, icon-margin) * 2 +
+              map-get($dim-fonction-items, icon-content) +
+              map-get($dim-fonction-items, span-width);
+
 $fonction-list: (
     list-style-type: none,
     padding-left: $medium,
     margin: 0,
-    li: (
-        padding: ($medium - 8px) 0
-    ),
-    number: (
-        background-color: $color-primary,
-        color: $color-texte-secondary,
-        font-size: 90%,
-        padding: ($very-small + 1px) ($very-small + 3px) ($very-small - 3px) ($very-small + 3px),
-        border-radius: map-get($radius-size, small),
-        margin-right: $small
-    ),
-    icon: (
-        color: $color-quaternary,
-        font-size: $icon-size + 1px,
-        min-width: 23.75px,
-        selected: (
-            color: $color-primary,
-        )
-    ),
     texte: (
-        width: 176px,
-        margin-right: -1 * ($medium + 10px),
-        padding: ($medium + 7px) ($big + 20px),
+        margin: ($medium - 8px) ($left-move + 20px) ($medium - 8px) $left-move,
+        max-width: $texte-width,
+        padding: ($medium + 7px) ($big + 15px) ($medium + 7px) 0,
         background-color: lighten($color-quaternary, 50%),
         border-radius: map-get($radius-size, medium),
         box-shadow: 0 4px 12px -2px $color-shadow,
         selected: (
             background-color: lighten($color-primary, 35%)
         )
+    ),
+    number: (
+        background-color: $color-primary,
+        padding: ($very-small + 1px) ($very-small + 3px) ($very-small - 3px) ($very-small + 3px),
+        color: $color-texte-secondary,
+        font-size: 90%,
+        border-radius: map-get($radius-size, small),
+    ),
+    icon: (
+        color: $color-quaternary,
+        font-size: $icon-size + 1px,
+        min-width: 23.75px,
+        margin: 0 ($medium + 5px),
+        selected: (
+            color: $color-primary,
+        )
     )
-);
-    /* Dimension for fonctionnement items */
-$dim-fonction-items: (
-    number-content: 8.1px,
-    number-pad: 8px,
-    number-margin: 15px,
-    icon-content: 23.75px,
-);
-$left-move: map-get($dim-fonction-items, number-content) / 2 +
-            map-get($dim-fonction-items, number-pad) +
-            map-get($dim-fonction-items, number-margin) +
-            map-get($dim-fonction-items, icon-content);
-                
+);              
 
 /* ========================================================================== */
 /* Specific 'restaurant figure' variables */
@@ -383,6 +383,7 @@ $plat: (
     box-shadow: 0 2px 7px -1px $color-shadow,
     margin: ($very-small + 2px) 0,
     overflow: hidden,
+    cursor: pointer,
     description: (
         margin: ($small - 3px) auto ($small - 3px) (2 * $very-small),
         min-width: 0,
