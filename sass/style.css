@@ -100,6 +100,8 @@ h1, .footer > h2 {
 /* Specific Mixin for nav behaviour */
 /* Mixin for link in the nav CSS style */
 /* ========================================================================== */
+/* Specific Mixin for plat animation */
+/* ========================================================================== */
 /* Specific Mixin for Loading spinner animation */
 /* Mixin for Loading spinner in order to style the rigth or the left div border */
 /* Mixin for Loading spinner in order to style the rigth or the left div container for hand */
@@ -346,54 +348,47 @@ h1, .footer > h2 {
   }
 }
 
-.fonction-list > li {
-  padding: 12px 0;
+.fonction-list__texte {
+  margin: 12px 32.05px 12px 12.05px;
+  max-width: 249.75px;
+  padding: 27px 65px 27px 0;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 4px 12px -2px #cecece;
+          box-shadow: 0 4px 12px -2px #cecece;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+}
+
+.fonction-list__texte--selected {
+  background-color: #f2eafb;
 }
 
 .fonction-list__number {
   background-color: #9356DC;
+  padding: 6px 8px 2px 8px;
   color: #FFFFFF;
   font-size: 90%;
-  padding: 6px 8px 2px 8px;
   border-radius: 15px;
-  margin-right: 15px;
-  position: relative;
-  z-index: 2;
+  position: absolute;
+  left: -12.05px;
+  z-index: 1;
 }
 
 .fonction-list__icon {
   color: #777777;
   font-size: 19px;
   min-width: 23.75px;
-  position: relative;
-  z-index: 2;
+  margin: 0 25px;
 }
 
 .fonction-list__icon--selected {
   color: #9356DC;
-}
-
-.fonction-list__texte {
-  width: 176px;
-  margin-right: -30px;
-  padding: 27px 70px;
-  background-color: #f7f7f7;
-  border-radius: 20px;
-  -webkit-box-shadow: 0 4px 12px -2px #cecece;
-          box-shadow: 0 4px 12px -2px #cecece;
-  position: relative;
-  left: -50.8px;
-  z-index: 1;
-}
-
-.fonction-list__texte--selected {
-  background-color: #f2eafb;
 }
 
 /* BEM for restaurant preview (figure structure) */
@@ -550,6 +545,7 @@ h1, .footer > h2 {
           box-shadow: 0 2px 7px -1px #cecece;
   margin: 7px 0;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .plat__description {
@@ -670,6 +666,7 @@ h1, .footer > h2 {
      -moz-appearance: none;
           appearance: none;
   border: 0;
+  cursor: pointer;
 }
 
 .button:hover::after {

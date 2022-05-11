@@ -112,6 +112,14 @@
 }
 
 /* ========================================================================== */
+/* Specific Mixin for plat animation */
+@mixin ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ========================================================================== */
 /* Specific Mixin for Loading spinner animation */
     /* Mixin for Loading spinner in order to style the rigth or the left div border */
 @mixin div-border($side){
@@ -166,10 +174,4 @@
     width: 19.489795918367347vw;
     filter: drop-shadow(0.7vw 0.7vw 0.7vw $color-shadow);
     animation: hands-shake 10ms $delay alternate infinite both;
-}
-
-@mixin ellipsis {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
